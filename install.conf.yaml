@@ -1,5 +1,8 @@
 - clean: ['~']
 
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
 - link:
     ~/.gitconfig:
         path: gitconfig
@@ -11,5 +14,3 @@
         create: false
         relink: false
         force: false
-
-
