@@ -14,6 +14,8 @@
     ~/.xmodmap: meta/configs/xmodmap
     ~/.config/terminator/config: meta/configs/terminator
     ~/.config/autostart/xmodmap.desktop: meta/configs/autostart_xmodmap
+    ~/.emacs.d: emacs/
+ 
 
 - shell:
     - [sh oh-my-zsh/tools/install.sh]
