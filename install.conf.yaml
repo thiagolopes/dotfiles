@@ -14,3 +14,7 @@
         create: false
         relink: false
         force: false
+
+- shell:
+    - [sh ./oh-my-zsh/tools/install.sh]
+    - [cp -r ./meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
