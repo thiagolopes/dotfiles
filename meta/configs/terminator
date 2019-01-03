@@ -1,0 +1,30 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
+  title_font = Hack 9
+  title_inactive_bg_color = "#709080"
+  title_inactive_fg_color = "#ffffff"
+  title_transmit_bg_color = "#1e2320"
+  title_use_system_font = False
+[keybindings]
+  help = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#ffffff"
+    font = Hack 10
+    foreground_color = "#ffffff"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
