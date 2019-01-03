@@ -5,14 +5,12 @@
 
 - link:
     ~/.gitconfig:
-        path: gitconfig
+        path: ./meta/configs/gitconfig
         create: false
-        relink: false
         force: false
     ~/.zshrc:
-        path: zshrc
+        path: ./meta/configs/zshrc
         create: false
-        relink: false
         force: false
 
 - shell:
