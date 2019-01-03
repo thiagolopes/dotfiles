@@ -1,3 +1,14 @@
 [user]
-	name = thiagolopes
-	email = thiagolopes@protonmail.com
+    email = thiagolopes@protonmail.com
+    name = thiagolopes
+[core]
+    editor = emacs
+[alias]
+    movie = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[url "git@bitbucket.org:"]
+    insteadOf = https://bitbucket.org/
+[url "git@gitlab.com:"]
+    insteadOf = https://gitlab.com/
