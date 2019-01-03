@@ -4,14 +4,8 @@
   - [git submodule update --init --recursive, Installing submodules]
 
 - link:
-    ~/.gitconfig:
-        path: ./meta/configs/gitconfig
-        create: false
-        force: false
-    ~/.zshrc:
-        path: ./meta/configs/zshrc
-        create: false
-        force: false
+    ~/.gitconfig: meta/configs/gitconfig
+    ~/.zshrc: meta/configs/zshrc
 
 - shell:
     - [sh ./oh-my-zsh/tools/install.sh]
