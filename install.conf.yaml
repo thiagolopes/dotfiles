@@ -1,11 +1,19 @@
 - clean: ['~']
 
+- defaults:
+    link:
+      create: true
+      relink: true
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
 
 - link:
     ~/.gitconfig: meta/configs/gitconfig
     ~/.zshrc: meta/configs/zshrc
+    ~/.xmodmap: meta/configs/xmodmap
+    ~/.config/terminator/config: meta/configs/terminator
+    ~/.config/autostart/xmodmap.desktop: meta/configs/autostart_xmodmap
 
 - shell:
     - [sh ./oh-my-zsh/tools/install.sh]
