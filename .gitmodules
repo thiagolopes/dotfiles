@@ -13,3 +13,6 @@
 [submodule "meta/zsh-plugins/zsh-autosuggestions"]
 	path = meta/zsh-plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "pyenv-installer"]
+	path = pyenv-installer
+	url = git@github.com:pyenv/pyenv-installer.git

@@ -16,5 +16,6 @@
     ~/.config/autostart/xmodmap.desktop: meta/configs/autostart_xmodmap
 
 - shell:
-    - [sh ./oh-my-zsh/tools/install.sh]
-    - [cp -r ./meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
+    - [sh oh-my-zsh/tools/install.sh]
+    - [cp -r meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
+    - [sh pyenv-installer/bin/pyenv-installer]
