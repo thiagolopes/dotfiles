@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Version=0.9.4
 Type=Application
-Name=xmodamp
+Name=xmodmap
 Comment=
 Exec=xmodmap /home/thiago/.xmodmap
 OnlyShowIn=XFCE;
