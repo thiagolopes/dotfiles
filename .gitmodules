@@ -15,7 +15,7 @@
 	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "pyenv-installer"]
 	path = pyenv-installer
-	url = git@github.com:pyenv/pyenv-installer.git
+	url = https://github.com/pyenv/pyenv-installer
 [submodule "emacs"]
 	path = emacs
-	url = git@github.com:thiagolopes/emacs
+	url = https://github.com/thiagolopes/emacs
