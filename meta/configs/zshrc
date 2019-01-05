@@ -50,8 +50,9 @@ export GPG_TTY=$(tty)
 
 # Alias
 [ -s "$OLIST" ] && alias note_work='emacs -nw $OLIST/notes.org'
-alias note_me='emacs -nw $HOME/Documents/anotaçoes.org'
+alias note_me='emacs -nw $HOME/Documents/notes.org'
 alias python_dev='pip install rope jedi flake8 autopep8 yapf isort'
 alias emacs='emacs -nw --no-init-file'
+alias update='sudo apt update && sudo apt dist-upgrade && sudo apt autoremove'
 
-source $HOME/.cargo/env
+[ -s $HOME/.cargo ] && source $HOME/.cargo/env
