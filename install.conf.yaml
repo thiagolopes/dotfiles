@@ -7,6 +7,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [sh oh-my-zsh/tools/install.sh]
 
 - link:
     ~/.gitconfig: meta/configs/gitconfig
@@ -15,9 +16,8 @@
     ~/.config/terminator/config: meta/configs/terminator
     ~/.config/autostart/xmodmap.desktop: meta/configs/autostart_xmodmap
     ~/.emacs.d: emacs/
- 
+
 
 - shell:
-    - [sh oh-my-zsh/tools/install.sh]
     - [cp -r meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
     - [sh pyenv-installer/bin/pyenv-installer]
