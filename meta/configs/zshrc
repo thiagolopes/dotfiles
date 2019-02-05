@@ -52,7 +52,7 @@ export GPG_TTY=$(tty)
 alias emacs='emacs -nw --no-init-file'
 [ -s "$OLIST" ] && alias note_work='emacs -nw "${OLIST}"/notes.org'
 alias note_me='emacs -nw "$HOME"/Documents/notes.org'
-alias python_dev='pip install rope jedi flake8 autopep8 yapf isort'
+alias python_dev='pip install rope jedi flake8 autopep8 yapf isort elpy'
 alias update='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove'
 
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
