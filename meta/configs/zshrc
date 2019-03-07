@@ -56,3 +56,5 @@ alias python_dev='pip install rope jedi flake8 autopep8 yapf isort elpy'
 alias update='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove'
 
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
+
+export PYTHONBREAKPOINT=ipdb.set_trace
