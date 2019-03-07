@@ -16,6 +16,7 @@
     ~/.config/terminator/config: meta/configs/terminator
     ~/.config/autostart/xmodmap.desktop: meta/configs/autostart_xmodmap
     ~/.emacs.d: emacs/
+    ~/.config/neofetch: meta/configs/neofetch/
 
 
 - shell:
