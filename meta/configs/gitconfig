@@ -5,6 +5,7 @@
     editor = emacs
 [alias]
     movie = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    update-master = !git checkout master && git pull origin master && git checkout -
 
 [url "git@github.com:"]
     insteadOf = https://github.com/
