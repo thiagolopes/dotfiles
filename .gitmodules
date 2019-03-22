@@ -16,6 +16,3 @@
 [submodule "pyenv-installer"]
 	path = pyenv-installer
 	url = https://github.com/pyenv/pyenv-installer
-[submodule "emacs"]
-	path = emacs
-	url = https://github.com/thiagolopes/emacs
