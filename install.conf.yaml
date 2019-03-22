@@ -11,13 +11,12 @@
 
 - link:
     ~/.gitconfig: meta/configs/gitconfig
+    ~/.conkyrc: meta/configs/conkyrc
     ~/.zshrc: meta/configs/zshrc
     ~/.xmodmap: meta/configs/xmodmap
     ~/.config/terminator/config: meta/configs/terminator
     ~/.config/autostart/xmodmap.desktop: meta/configs/autostart_xmodmap
-    ~/.emacs.d: emacs/
     ~/.config/neofetch: meta/configs/neofetch/
-
 
 - shell:
     - [cp -r meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
