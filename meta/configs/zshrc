@@ -16,7 +16,7 @@ plugins=(
     sudo
     heroku
     gnu-utils
-    safe-paste
+    # safe-paste
     cargo
     zsh-autosuggestions
     zsh-syntax-highlighting
