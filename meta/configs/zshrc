@@ -5,7 +5,7 @@ export ZSH=/home/thiago/.oh-my-zsh
 ZSH_THEME="fishy"
 
 # Work
-export OLIST=./OlistProjects/
+export WORK_FOLDER=./OlistProjects/
 
 plugins=(
     git
@@ -38,7 +38,7 @@ eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export PYTHON_VERSION=`pyenv version-name`
 echo -e "\e[01;32mPython version: $PYTHON_VERSION\e[0m"
-export PROJECT_HOME=$OLIST
+export PROJECT_HOME=$WORK_FOLDER
 export WORKON_HOME=$HOME/.virtualenvs
 
 if [ $PYTHON_VERSION != "system" ]; then
@@ -50,8 +50,9 @@ export GPG_TTY=$(tty)
 
 # Alias
 alias emacs='emacs -nw --no-init-file'
-[ -s "$OLIST" ] && alias note_work='emacs -nw "${OLIST}"/notes.org'
-alias note_me='emacs -nw "$HOME"/Documents/notes.org'
+[ -s "$WORK_FOLDER" ] && alias work='emacs -nw "${WORK_FOLDER}"/Documents/Orgs/personal_notes.org'
+alias notes='emacs -nw "$HOME"/Documents/Orgs/work_olist_notes.org'
+alias todo='emacs -nw "$HOME"/Documents/Orgs/todo.org'
 alias python_dev='pip install rope jedi flake8 autopep8 yapf isort elpy'
 alias update='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove'
 
