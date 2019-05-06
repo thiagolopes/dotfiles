@@ -49,7 +49,7 @@ fi
 export GPG_TTY=$(tty)
 
 # Alias
-alias emacs='emacs -nw --no-init-file'
+alias emacs='emacs -nw'
 [ -s "$WORK_FOLDER" ] && alias work='emacs -nw "${WORK_FOLDER}"/Documents/Orgs/personal_notes.org'
 alias notes='emacs -nw "$HOME"/Documents/Orgs/work_olist_notes.org'
 alias todo='emacs -nw "$HOME"/Documents/Orgs/todo.org'
