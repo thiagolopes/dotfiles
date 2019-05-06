@@ -16,10 +16,10 @@ plugins=(
     sudo
     heroku
     gnu-utils
-    # safe-paste
     cargo
     zsh-autosuggestions
     zsh-syntax-highlighting
+    tmux
 )
 
 source $ZSH/oh-my-zsh.sh
