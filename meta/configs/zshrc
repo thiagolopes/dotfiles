@@ -37,7 +37,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export PYTHON_VERSION=`pyenv version-name`
-echo -e "\e[01;32mPython version: $PYTHON_VERSION\e[0m"
+echo -e "\e[01;32mPython version: $PYTHON_VERSION\e[0m 🐍"
 export PROJECT_HOME=$WORK_FOLDER
 export WORKON_HOME=$HOME/.virtualenvs
 
