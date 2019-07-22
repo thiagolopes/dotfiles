@@ -16,7 +16,6 @@
     ~/.xmodmap: meta/configs/xmodmap
     ~/.config/autostart/xmodmap.desktop: meta/configs/autostart_xmodmap
     ~/.config/neofetch: meta/configs/neofetch/
-    ~/.mozilla/firefox/*.default/chrome/userChrome.css: meta/firefox/userChrome.css
 
 - shell:
     - [cp -r meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
