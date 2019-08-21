@@ -56,6 +56,18 @@ alias notes='emacs -nw "$HOME"/Documents/Orgs/work_olist_notes.org'
 alias todo='emacs -nw "$HOME"/Documents/Orgs/todo.org'
 alias python_dev='pip install rope jedi flake8 autopep8 yapf isort elpy'
 alias update='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove'
+alias bat='bat --theme 1337'
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+alias ~='cd ~'
+
+# Easy report
+alias ls='ls -Fh --color=auto --group-directories-first'
 
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
 
