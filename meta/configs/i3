@@ -612,3 +612,5 @@ exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
 exec --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
 exec --no-startup-id compton
+
+for_window [instance="telegram-desktop"] floating enable, resize set 900 600, scratchpad show, move position cente
