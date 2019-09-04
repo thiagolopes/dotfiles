@@ -614,3 +614,8 @@ exec --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
 exec --no-startup-id compton
 
 for_window [instance="telegram-desktop"] floating enable, resize set 900 600, scratchpad show, move position cente
+
+exec redshift
+exec udiskie
+exec nm-applet
+exec xfce4-clipman
