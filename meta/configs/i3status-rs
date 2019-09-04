@@ -1,0 +1,37 @@
+# theme = "solarized-dark"
+icons = "awesome"
+
+[[block]]
+block = "focused_window"
+max_width = 21
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% {time}"
+
+[[block]]
+block = "music"
+player = "audacious"
+buttons = ["play", "next"]
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "sound"
+step_width = 5
+driver = "pulseaudio"
+on_click = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
