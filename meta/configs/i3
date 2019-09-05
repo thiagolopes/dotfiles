@@ -44,8 +44,8 @@ bindsym $alt+F2 exec rofi -show run -theme DarkBlue
 
 # Focus
 ## change focus
-bindsym $mod+p focus left
-bindsym $mod+n focus right
+bindsym $mod+comma focus left
+bindsym $mod+period focus right
 
 ## alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -54,8 +54,8 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 ## move focused window
-bindsym $mod+Shift+p move left
-bindsym $mod+Shift+n move right
+bindsym $mod+Shift+comma move left
+bindsym $mod+Shift+period move right
 
 ## alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
