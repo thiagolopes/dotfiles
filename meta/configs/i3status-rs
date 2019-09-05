@@ -2,10 +2,6 @@
 icons = "awesome"
 
 [[block]]
-block = "focused_window"
-max_width = 21
-
-[[block]]
 block = "battery"
 interval = 10
 format = "{percentage}% {time}"
