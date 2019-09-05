@@ -192,10 +192,10 @@ bar {
 
 # Windows configs
 ## Telegram
-for_window [instance="telegram-desktop"] floating enable,
-for_window [instance="telegram-desktop"] resize set 900 600
-for_window [instance="telegram-desktop"] move scratchpad
-bindsym $mod+t [instance="telegram-desktop"] scratchpad show; [instance="telegram-desktop"] move position center
+for_window [title="Telegram"] floating enable,
+for_window [title="Telegram"] resize set 900 600
+for_window [title="Telegram"] move scratchpad
+bindsym $mod+t [title="Telegram"] scratchpad show; [title="Telegram"] move position center
 
 
 ## Mumble
