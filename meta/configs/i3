@@ -176,7 +176,7 @@ bar {
         # status_command i3status
         font pango:Hack 9
         position bottom
-        status_command ~/.cargo/bin/i3status-rs ~/.config/i3/i3status-rs.tolm
+        status_command ~/.cargo/bin/i3status-rs ~/.config/i3/i3status-rs.toml
         colors {
                separator #666666
                background #000000

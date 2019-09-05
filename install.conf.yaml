@@ -18,7 +18,7 @@
     ~/.config/neofetch: meta/configs/neofetch/
     ~/.compton/compton.conf: meta/configs/compton
     ~/.config/i3/config: meta/configs/i3
-    ~/.config/i3/i3status-rs.tolm: meta/configs/i3status-rs
+    ~/.config/i3/i3status-rs.toml: meta/configs/i3status-rs
 
 - shell:
     - [cp -r meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
