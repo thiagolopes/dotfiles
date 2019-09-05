@@ -223,6 +223,9 @@ exec --no-startup-id gnome-settings-daemon
 
 
 # Keysets
+## SS
+bindsym --release Print exec scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'
+
 ## Sound
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
