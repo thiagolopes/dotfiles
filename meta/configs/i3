@@ -11,6 +11,7 @@
 
 set $mod Mod4
 set $alt Mod1
+set $ctrl Ctrl
 set $up l
 set $down k
 set $left j
@@ -157,7 +158,7 @@ bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 9"
 -B "    Reboot " "pkill i3-nagbar && systemctl reboot" \
 -B "    Shutdown " "pkill i3-nagbar && systemctl poweroff"
 ## locn
-bindsym $mod+l exec i3lock
+bindsym $alt+$ctrl+l exec i3lock-fancy
 
 # Resize
 ## resize window (you can also use the mouse for that)
