@@ -15,7 +15,7 @@ set $ctrl Ctrl
 set $up l
 set $down k
 set $left j
-set $right semicolon
+set $right ccedilla
 
 
 # Font for window titles. Will also be used by the bar unless a different font
