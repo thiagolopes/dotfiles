@@ -72,3 +72,8 @@ alias ls='ls -Fh --color=auto --group-directories-first'
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
 
 export PYTHONBREAKPOINT=ipdb.set_trace
+
+# autostart x
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
