@@ -10,15 +10,15 @@ shadow-opacity = 0.95;
 shadow-red = 0.18;
 shadow-green = 0.20;
 shadow-blue = 0.25;
-shadow-exclude = [ "class_g = 'Cairo-clock'" ,
-    "class_g = 'CoverGloobus'",
-    "class_g = 'Tilda'",
-    "class_g = 'Conky'",
+shadow-exclude = [
+    "name = 'Notification'",
     "class_g ?= 'Notify-osd'",
     "class_g = 'Firefox'",
     "class_g = 'Firefox-esr'",
     "class_g = 'Dmenu'",
-    "name = 'Notification'",
+    "class_g = 'Firefox' && argb",
+    "class_g = 'i3-frame'",
+    "class_g = 'TelegramDesktop' && argb"
     "_GTK_FRAME_EXTENTS@:c"
 ];
 
@@ -30,22 +30,24 @@ fade-out-step = 0.02;
 fade-exclude = [
 ];
 
+
+sw-opti = false;
+unredir-if-possible = false;
+detect-transient = true;
+detect-client-leader = true;
+invert-color-include = [ ];
+
 ## other
-backend = "xrender";
+backend = "glx";
 mark-wmwin-focused = true;
 mark-ovredir-focused = true;
+use-ewmh-active-win = false;
 detect-rounded-corners = true;
 detect-client-opacity = true;
 refresh-rate = 0;
-vsync = "none";
+vsync = true;
 dbe = false;
 paint-on-overlay = true;
-focus-exclude = [ "class_g = 'Cairo-clock'" ,
-    "class_g = 'CoverGloobus'",
-    "class_g = 'Tilda'",
-    "class_g = 'Firefox'",
-    "class_g = 'Firefox-esr'"
-];
 detect-transient = true;
 detect-client-leader = true;
 invert-color-include = [ ];
@@ -55,3 +57,16 @@ wintypes:
 {
   tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; };
 };
+
+# GLX backend
+glx-no-stencil = true;
+glx-no-rebind-pixmap = false;
+use-damage = true;
+
+# Opacity
+inactive-opacity = 0.9;
+blur-background = false;
+blur-kern = "3x3box";
+blur-background-fixed = false;
+inactive-dim = 0.4; # inactive windows are dimmed
+blur-background-exclude = [ "window_type = 'dock'", "window_type = 'desktop'" ];
