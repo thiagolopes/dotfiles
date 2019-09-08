@@ -210,12 +210,15 @@ for_window [title="Telegram"] resize set 900 600
 for_window [title="Telegram"] move scratchpad
 bindsym $mod+t [title="Telegram"] scratchpad show; [title="Telegram"] move position center
 
-
 ## Mumble
 for_window [instance="mumble"] floating enable,
 for_window [instance="mumble"] resize set 300 800
 for_window [instance="mumble"] move scratchpad
 bindsym $mod+y [instance="mumble"] scratchpad show; [instance="mumble"], move position center
+
+## Without keybind
+for_window [instance="keepassxc"] floating enable, resize set 900 600
+for_window [instance="pavucontrol"] floating enable, resize set 900 600
 
 
 # Startup essecial
