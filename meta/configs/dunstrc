@@ -131,7 +131,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = #454947
+    separator_color = auto
 
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
@@ -152,7 +152,6 @@
 
 [frame]
     width = 2
-    color = "#81a2be"
 
 [shortcuts]
 
@@ -180,17 +179,17 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#1f1f1f"
-    foreground = "#c6c6c6"
+    foreground = "#ffffff"
     timeout = 10
 
 [urgency_normal]
     background = "#1f1f1f"
-    foreground = "#c6c6c6"
+    foreground = "#ffffff"
     timeout = 10
 
 [urgency_critical]
     background = "#1f1f1f"
-    foreground = "#c6c6c6"
+    foreground = "#ffffff"
     timeout = 0
 
 
