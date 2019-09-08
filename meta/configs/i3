@@ -233,7 +233,8 @@ exec --no-startup-id compton
 exec --no-startup-id gnome-settings-daemon
 
 
-# Remove borders and window title
+# Remove borders and no window title
+new_window normal 1 px
 # for_window [class="^.*"] border pixel 2
 # new_window 1pixel
 
