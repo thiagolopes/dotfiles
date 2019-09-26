@@ -48,9 +48,6 @@ refresh-rate = 0;
 vsync = true;
 dbe = false;
 paint-on-overlay = true;
-detect-transient = true;
-detect-client-leader = true;
-invert-color-include = [ ];
 glx-copy-from-front = false;
 glx-swap-method = "undefined";
 wintypes:
