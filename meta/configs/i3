@@ -188,17 +188,17 @@ bindsym $mod+r mode "resize"
 ## finds out, if available)
 bar {
         # status_command i3status
-        font pango:Hack 9
+        font pango:Hack 8
         position bottom
-        status_command ~/.cargo/bin/i3status-rs ~/.config/i3/i3status-rs.toml
+        status_command ~/.bin/i3status-rs ~/.config/i3/i3status-rs.toml
         colors {
                separator #666666
-               background #000000
-               statusline #dddddd
-               focused_workspace #0088CC #0088CC #ffffff
-               active_workspace #333333 #333333 #ffffff
-               inactive_workspace #333333 #333333 #888888
-               urgent_workspace #2f343a #900000 #ffffff
+               background #333333
+               statusline #bbbbbb
+               focused_workspace #888888 #dddddd #222222 #ffffff
+               active_workspace #333333 #555555 #bbbbbb #888888
+               inactive_workspace #333333 #555555 #bbbbbb #888888
+               urgent_workspace #2f343a #900000 #ffffff #ffffff
     }
 }
 
