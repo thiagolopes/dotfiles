@@ -34,7 +34,6 @@ format = "{percentage}% {time}"
 
 [[block]]
 block = "music"
-player = "audacious"
 buttons = ["play", "next"]
 
 [[block]]
