@@ -14,6 +14,7 @@
     ~/.conkyrc: meta/configs/conkyrc
     ~/.zshrc: meta/configs/zshrc
     ~/.xmodmap: meta/configs/xmodmap
+    ~/.xmodmap_macbook: meta/configs/xmodmap_macbook
     ~/.config/autostart/xmodmap.desktop: meta/configs/autostart_xmodmap
     ~/.config/neofetch: meta/configs/neofetch/
     ~/.compton/compton.conf: meta/configs/compton
