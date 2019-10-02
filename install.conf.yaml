@@ -11,6 +11,7 @@
 
 - link:
     ~/.gitconfig: meta/configs/gitconfig
+    ~/.xprofile: meta/configs/xprofile
     ~/.conkyrc: meta/configs/conkyrc
     ~/.zshrc: meta/configs/zshrc
     ~/.xmodmap: meta/configs/xmodmap
