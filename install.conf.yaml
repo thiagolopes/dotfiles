@@ -15,13 +15,11 @@
     ~/.zshrc: meta/configs/zshrc
     ~/.xmodmap: meta/configs/xmodmap
     ~/.xmodmap_macbook: meta/configs/xmodmap_macbook
-    ~/.config/autostart/xmodmap.desktop: meta/configs/autostart_xmodmap
     ~/.config/neofetch: meta/configs/neofetch/
     ~/.compton/compton.conf: meta/configs/compton
     ~/.config/i3/config: meta/configs/i3
     ~/.config/i3/i3status-rs.toml: meta/configs/i3status-rs
     ~/.config/dunst/dunstrc: meta/configs/dunstrc
-    ~/.Xresources: meta/configs/Xresources
 
 - shell:
     - [cp -r meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
