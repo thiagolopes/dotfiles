@@ -25,7 +25,7 @@
     ~/.config/dunst/dunstrc: meta/configs/dunstrc
     ~/.config/ranger/rc.conf: meta/configs/ranger.rc
 
-    ~/.bin/: meta/bin/
+    ~/.bin: meta/bin
 
 - shell:
     - [cp -r meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
