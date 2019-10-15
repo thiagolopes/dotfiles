@@ -1,0 +1,49 @@
+map <UP>       move up=1
+map <DOWN>     move down=1
+map <LEFT>     move left=1
+map <RIGHT>    move right=1
+map <HOME>     move to=0
+map <END>      move to=-1
+map <PAGEDOWN> move down=1   pages=True
+map <PAGEUP>   move up=1     pages=True
+map <CR>       move right=1
+#map <DELETE>   console delete
+map <INSERT>   console touch%space
+
+
+# VIM-like US
+copymap <UP>       l
+copymap <DOWN>     k
+copymap <LEFT>     j
+copymap <RIGHT>    ;
+copymap <HOME>     gg
+copymap <END>      G
+copymap <PAGEDOWN> <C-F>
+copymap <PAGEUP>   <C-B>
+
+# VIM-like abnt2
+# copymap <UP>       k
+# copymap <DOWN>     j
+# copymap <LEFT>     h
+# copymap <RIGHT>    l
+# copymap <HOME>     gg
+# copymap <END>      G
+# copymap <PAGEDOWN> <C-F>
+# copymap <PAGEUP>   <C-B>
+
+# Emacs
+copymap <ESC>       <C-g>
+copymap <UP>        <C-p>
+copymap <DOWN>      <C-n>
+copymap <LEFT>      <C-b>
+copymap <RIGHT>     <C-f>
+copymap <HOME>      <C-a>
+copymap <END>       <C-e>
+# copymap <DELETE>    <C-d>
+copymap <BACKSPACE> <C-h>
+map <A-w> copy
+# map <C-w> cut
+map <C-y> paste
+
+
+set preview_images true
