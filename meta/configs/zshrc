@@ -57,6 +57,7 @@ alias todo='emacs -nw "$HOME"/Documents/Orgs/todo.org'
 alias python_dev='pip install rope jedi flake8 autopep8 yapf isort elpy'
 alias update='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove'
 alias bat='bat --theme 1337'
+alias cat='bat --theme 1337'
 
 # Navigation
 alias ..='cd ..'
