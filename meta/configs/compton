@@ -30,35 +30,33 @@ fade-out-step = 0.02;
 fade-exclude = [
 ];
 
-
 sw-opti = false;
-unredir-if-possible = false;
 detect-transient = true;
 detect-client-leader = true;
 invert-color-include = [ ];
 
 ## other
-backend = "glx";
 mark-wmwin-focused = true;
 mark-ovredir-focused = true;
 use-ewmh-active-win = false;
 detect-rounded-corners = true;
 detect-client-opacity = true;
 refresh-rate = 0;
-vsync = true;
 dbe = false;
 paint-on-overlay = true;
-glx-copy-from-front = false;
-glx-swap-method = "undefined";
+
 wintypes:
 {
   tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; };
 };
 
 # GLX backend
+backend = "glx";
+vsync="opengl-mswc"
 glx-no-stencil = true;
-glx-no-rebind-pixmap = false;
-use-damage = true;
+glx-swap-method = 2;
+unredir-if-possible = true;
+glx-use-gpushader4 = true;
 
 # Opacity
 inactive-opacity = 0.9;
