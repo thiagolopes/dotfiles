@@ -23,8 +23,7 @@
     ~/.config/i3/i3status-rs.toml: meta/configs/i3status-rs
     ~/.config/dunst/dunstrc: meta/configs/dunstrc
 
-    ~/.bin/i3status-rs: meta/bin/i3status-rs
-    ~/.bin/kb-keyboard: meta/bin/kb-keyboard
+    ~/.bin/: meta/bin/
 
 - shell:
     - [cp -r meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
