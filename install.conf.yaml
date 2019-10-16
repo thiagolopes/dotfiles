@@ -18,6 +18,7 @@
     ~/.xmodmap: meta/configs/xmodmap
     ~/.xmodmap_macbook: meta/configs/xmodmap_macbook
     ~/.Xresources: meta/configs/Xresources
+    ~/.urxvt/ext: meta/configs/urxvt
     ~/.config/neofetch: meta/configs/neofetch/
     ~/.compton/compton.conf: meta/configs/compton
     ~/.config/i3/config: meta/configs/i3
