@@ -99,6 +99,12 @@ bindsym $mod+Shift+space floating toggle
 ## change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+## move floating container to the center of all outputs
+bindsym $mod+c move absolute position center
+
+## set sticky mode
+bindsym $mod+Shift+s sticky toggle
+
 ## focus the parent container
 bindsym $mod+a focus parent
 
