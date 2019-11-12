@@ -27,8 +27,7 @@ fading = true;
 fade-delta = 0.25;
 fade-in-step = 0.02;
 fade-out-step = 0.02;
-fade-exclude = [
-];
+no-fading-openclose = true
 
 sw-opti = false;
 detect-transient = true;
