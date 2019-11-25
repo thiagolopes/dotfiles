@@ -1,13 +1,6 @@
 # theme = "solarized-dark"
 icons = "awesome"
 
-[theme]
-name = "solarized-dark"
-[theme.overrides]
-idle_bg = "#333333"
-idle_fg = "#bbbbbb"
-info_bg = "#555555"
-info_fg = "#333333"
 
 [[block]]
 block = "disk_space"
