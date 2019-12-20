@@ -226,7 +226,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id blueman-applet
 exec --no-startup-id pulseaudio --start
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Sync/robot5.jpg
+exec_always --no-startup-id feh --bg-fill ~/.wallpaper
 exec --no-startup-id compton --config ~/.compton/compton.conf
 exec --no-startup-id gnome-settings-daemon
 exec_always --no-startup-id ~/.bin/i3wsr
