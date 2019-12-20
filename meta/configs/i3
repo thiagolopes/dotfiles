@@ -165,7 +165,7 @@ bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 9"
 -B "    Reboot " "pkill i3-nagbar && systemctl reboot" \
 -B "    Shutdown " "pkill i3-nagbar && systemctl poweroff"
 ## locn
-bindsym $alt+$ctrl+l exec i3lock-fancy
+bindsym $alt+$ctrl+l exec ~/.bin/betterlockscreen -l dimblur
 
 # Resize
 ## resize window (you can also use the mouse for that)
