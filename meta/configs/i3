@@ -43,8 +43,12 @@ bindsym $alt+F4      kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec "rofi -show run -theme glue_pro_blue"
-bindsym $alt+F2 exec "rofi -show run -theme glue_pro_blue"
+bindsym $mod+d exec "rofi -show run -theme glue_pro_blue -sidebar-mode\
+                           -kb-mode-next Control+e -kb-move-end ''\
+                           -kb-mode-previous Control+a -kb-move-front ''"
+bindsym $alt+F2 exec "rofi -show run -theme glue_pro_blue -sidebar-mode\
+                           -kb-mode-next Control+e -kb-move-end ''\
+                           -kb-mode-previous Control+a -kb-move-front ''"
 
 
 # Focus
