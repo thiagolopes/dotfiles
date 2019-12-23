@@ -43,12 +43,19 @@ bindsym $alt+F4      kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+#extras
+# https://github.com/svenstaro/rofi-calc
+# https://github.com/Mange/rofi-emoji
+# https://github.com/erebe/greenclip
 bindsym $mod+d exec "rofi -show run -theme glue_pro_blue -sidebar-mode\
-                           -kb-mode-next Control+e -kb-move-end ''\
-                           -kb-mode-previous Control+a -kb-move-front ''"
+                           -kb-mode-next Control+f -kb-move-char-forward ''\
+                           -kb-mode-previous Control+b -kb-move-char-back ''\
+                           -modi calc,window,emoji,'clipboard:~/.bin/greenclip print'"
 bindsym $alt+F2 exec "rofi -show run -theme glue_pro_blue -sidebar-mode\
-                           -kb-mode-next Control+e -kb-move-end ''\
-                           -kb-mode-previous Control+a -kb-move-front ''"
+                           -kb-mode-next Control+f -kb-move-char-forward ''\
+                           -kb-mode-previous Control+b -kb-move-char-back ''\
+                           -modi calc,window,emoji,'clipboard:~/.bin/greenclip print'"
 
 
 # Focus
