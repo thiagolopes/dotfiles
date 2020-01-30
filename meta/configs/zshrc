@@ -4,22 +4,19 @@ export ZSH=/home/thiago/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="fishy"
 
-# Work
-export WORK_FOLDER=./OlistProjects/
-
 plugins=(
-    git
-    common-aliases
-    git-extras
-    github
-    python
-    sudo
-    heroku
-    gnu-utils
-    cargo
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    tmux
+ common-aliases
+ git
+ git-extras
+ github
+ gnu-utils
+ heroku
+ history-substring-search
+ python
+ sudo
+ tmux
+ zsh-autosuggestions
+ zsh-syntax-highlighting
 )
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 
@@ -41,6 +38,7 @@ export PYTHON_VERSION=`pyenv version-name`
 echo -e "\e[01;32mPython version: $PYTHON_VERSION\e[0m 🐍"
 export PROJECT_HOME=$WORK_FOLDER
 export WORKON_HOME=$HOME/.virtualenvs
+export PYTHONBREAKPOINT=ipdb.set_trace
 
 if [ $PYTHON_VERSION != "system" ]; then
    pyenv virtualenvwrapper
@@ -74,7 +72,8 @@ alias ls='ls -Fh --color=auto --group-directories-first'
 
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
 
-export PYTHONBREAKPOINT=ipdb.set_trace
+# Work
+export WORK_FOLDER=./OlistProjects/
 
 # autostart x
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
