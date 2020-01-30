@@ -12,6 +12,7 @@
   - [git clone https://github.com/zsh-users/zsh-history-substring-search $ZSH_CUSTOM/plugins/]
   - [git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/]
   - [git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOM/plugins/]
+  - [sh pyenv-installer/bin/pyenv-installer]
 
 - link:
     ~/.gitconfig: meta/configs/gitconfig
@@ -29,8 +30,4 @@
     ~/.config/i3/i3status-rs.toml: meta/configs/i3status-rs
     ~/.config/dunst/dunstrc: meta/configs/dunstrc
     ~/.config/ranger/rc.conf: meta/configs/ranger.rc
-
     ~/.bin: meta/bin
-
-- shell:
-    - [sh pyenv-installer/bin/pyenv-installer]
