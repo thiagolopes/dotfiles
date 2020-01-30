@@ -166,17 +166,29 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Session file
 ## reload the configuration file
 bindsym $mod+Shift+c reload
+
 ## restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 ## exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 9" \
 -m "Do you really want to exit?" \
 -B "    Exit " "i3-msg exit" \
--B "    Lock " "pkill i3-nagbar && i3lock -f Hack" \
 -B "    Reboot " "pkill i3-nagbar && systemctl reboot" \
 -B "    Shutdown " "pkill i3-nagbar && systemctl poweroff"
-## locn
-bindsym $alt+$ctrl+l exec ~/.bin/betterlockscreen -l dimblur
+
+mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
+  bindsym l exec i3-msg exit
+  bindsym r exec systemctl reboot
+  bindsym s exec systemctl shutdown
+  bindsym Escape mode "default"
+  bindsym Return mode "default"
+}
+bindsym $mod+Shift+x mode "exit: [l]ogout, [r]eboot, [s]hutdown"
+
+
+## lock
+bindsym $alt+$ctrl+l exec "~/.bin/betterlockscreen -l dimblur"
 
 # Resize
 ## resize window (you can also use the mouse for that)
