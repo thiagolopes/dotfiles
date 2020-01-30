@@ -8,6 +8,10 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [sh oh-my-zsh/tools/install.sh]
+  - [git clone git://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/]
+  - [git clone git://github.com/zsh-users/zsh-history-substring-search.git $ZSH_CUSTOM/plugins/]
+  - [git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/]
+  - [git clone git://github.com/zsh-users/zsh-completions.git $ZSH_CUSTOM/plugins/]
 
 - link:
     ~/.gitconfig: meta/configs/gitconfig
@@ -29,5 +33,4 @@
     ~/.bin: meta/bin
 
 - shell:
-    - [cp -r meta/zsh-plugins/* ~/.oh-my-zsh/custom/plugins]
     - [sh pyenv-installer/bin/pyenv-installer]
