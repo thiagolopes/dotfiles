@@ -1,11 +1,13 @@
-export PATH=$HOME/.bin:$HOME/bin:/usr/local/bin:$PATH
-export ZSH=/home/thiago/.oh-my-zsh
+export PATH=$HOME/.pyenv/bin:$HOME/.bin:$HOME/bin:/usr/local/bin:$PATH
+export ZSH=$HOME/.oh-my-zsh
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="fishy"
 
 plugins=(
+ debian
  common-aliases
+ emacs
  git
  git-extras
  github
@@ -16,38 +18,58 @@ plugins=(
  sudo
  tmux
  zsh-autosuggestions
+ zsh-completions
  zsh-syntax-highlighting
 )
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 
 source $ZSH/oh-my-zsh.sh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export EDITOR='emacs'
 
-#GO path
+# User configuration
+##### NVM
+export NVM_DIR="$HOME/.nvm"
+function nvm {
+  if [ -s "$NVM_DIR/nvm.sh" ]; then
+    . "$NVM_DIR/nvm.sh"
+    nvm use system
+    nvm $@
+  fi
+}
+
+##### GO
 export GOPATH=$HOME/Documents/Go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-# Pyenv and virutalenvwrapper
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+##### Pyenv and virutalenvwrapper - Python
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-export PYTHON_VERSION=`pyenv version-name`
-echo -e "\e[01;32mPython version: $PYTHON_VERSION\e[0m 🐍"
-export PROJECT_HOME=$WORK_FOLDER
+export PIP_REQUIRE_VIRTUALENV=true
 export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$WORK_FOLDER
 export PYTHONBREAKPOINT=ipdb.set_trace
 
-if [ $PYTHON_VERSION != "system" ]; then
-   pyenv virtualenvwrapper
+# Lazy load pyenv
+if type pyenv > /dev/null; then
+    pyenv() {
+        unfunction $0
+        eval "$(command pyenv init -)"
+        eval "$(command pyenv virtualenv-init -)"
+        pyenv virtualenvwrapper
+        $0 "$@"
+    }
 fi
 
-# GPG Key
+workon() {
+    unfunction "$0"
+    pyenv > /dev/null 2>&1
+    $0 "$@"
+}
+
+##### GPG Key
 export GPG_TTY=$(tty)
 
-# Alias
+##### Alias
 alias emacs='emacs -nw'
 alias semacs='emacs -nw -Q'
 [ -s "$WORK_FOLDER" ] && alias work='emacs -nw "${WORK_FOLDER}"/Documents/Orgs/personal_notes.org'
@@ -58,24 +80,29 @@ alias update='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove
 alias bat='bat --theme 1337'
 alias cat='bat --theme 1337'
 alias remove_duplicate_lines='awk '"'"'!visited[$0]++'"'"''
+alias b='buku --suggest'
 
-# Navigation
+##### Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ~='cd ~'
-
 # Easy report
 alias ls='ls -Fh --color=auto --group-directories-first'
 
+##### Rust
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
 
-# Work
+##### Path configurations
 export WORK_FOLDER=./OlistProjects/
+export PROJECT_HOME=$WORK_FOLDER
+export WORKON_HOME=$HOME/.virtualenvs
 
-# autostart x
+##### Autostart X
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
 fi
+
+bindkey -e
