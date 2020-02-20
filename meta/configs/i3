@@ -48,14 +48,20 @@ bindsym $alt+F4      kill
 # https://github.com/svenstaro/rofi-calc
 # https://github.com/Mange/rofi-emoji
 # https://github.com/erebe/greenclip
+# https://github.com/marvinkreis/rofi-file-browser-extended#installation
 bindsym $mod+d exec "rofi -show drun -theme oxide -sidebar-mode -show-icons\
                            -kb-mode-next Control+f -kb-move-char-forward ''\
                            -kb-mode-previous Control+b -kb-move-char-back ''\
-                           -modi calc,window,emoji,run,'clipboard:~/.bin/greenclip print'"
+                           -modi calc,window,emoji,run,'clipboard:~/.bin/greenclip print',file-browser"
 bindsym $alt+F2 exec "rofi -show drun -theme oxide -sidebar-mode -show-icons\
                            -kb-mode-next Control+f -kb-move-char-forward ''\
                            -kb-mode-previous Control+b -kb-move-char-back ''\
-                           -modi calc,window,emoji,run,'clipboard:~/.bin/greenclip print'"
+                           -modi calc,window,emoji,run,'clipboard:~/.bin/greenclip print',file-browser"
+## open filebrowser
+bindsym $alt+F1 exec "rofi -show file-browser\
+                           -theme oxide -sidebar-mode -show-icons\
+                           -kb-mode-next Control+f -kb-move-char-forward ''\
+                           -kb-mode-previous Control+b -kb-move-char-back ''
 
 
 # Focus
