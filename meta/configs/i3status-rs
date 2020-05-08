@@ -1,5 +1,5 @@
-# theme = "solarized-dark"
-icons = "awesome"
+theme = "space-villain"
+icons = "none"
 
 
 [[block]]
