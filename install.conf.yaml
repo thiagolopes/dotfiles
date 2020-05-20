@@ -31,4 +31,5 @@
     ~/.config/dunst/dunstrc: meta/configs/dunstrc
     ~/.config/ranger/rc.conf: meta/configs/ranger.rc
     ~/.config/rofi/oxide.rasi: meta/configs/rofi-oxide
+    ~/.pdbrc: meta/configs/pdbrc
     ~/.bin: meta/bin
