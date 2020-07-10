@@ -58,7 +58,7 @@ bindsym $alt+F2 exec "rofi -show drun -theme oxide -sidebar-mode -show-icons\
                            -kb-mode-previous Control+b -kb-move-char-back ''\
                            -modi calc,window,emoji,run,'clipboard:~/.bin/greenclip print'"
 ## open filebrowser
-bindsym $alt+F1 exec "rofi -show file-browser\
+bindsym $alt+F1 exec "rofi -show window\
                            -theme oxide -sidebar-mode -show-icons\
                            -kb-mode-next Control+f -kb-move-char-forward ''\
                            -kb-mode-previous Control+b -kb-move-char-back ''
