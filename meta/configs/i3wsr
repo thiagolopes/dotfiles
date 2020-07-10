@@ -1,0 +1,8 @@
+[aliases]
+TelegramDesktop = "Telegram"
+URxvt = "Term"
+"Org.gnome.Nautilus" = "Nautilus"
+Brave-browser = "Brave"
+
+[general]
+separator = "  "
