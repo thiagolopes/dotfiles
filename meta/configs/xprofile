@@ -1,11 +1,13 @@
 #Swap alt win in macbook
-#setxkbmap -option altwin:swap_alt_win
+# setxkbmap -option altwin:swap_alt_win
+setxkbmap -layout br
+setxkbmap -option ctrl:nocaps
 
 #Run xmodmap
-xmodmap ~/.xmodmap
+# xmodmap ~/.xmodmap
 
 #Load color profile in mac
-#xcalib ~/Documents/CustomMacRumors.icc
+# xcalib ~/Documents/CustomMacRumors.icc
 
 #Set backlight
-#light -s sysfs/backlight/acpi_video0 -N 10
+# light -s sysfs/backlight/acpi_video0 -N 10
