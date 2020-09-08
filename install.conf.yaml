@@ -15,6 +15,7 @@
   - [sh pyenv-installer/bin/pyenv-installer]
 
 - link:
+    ~/.keynavrc: meta/configs/keynavrc
     ~/.gitconfig: meta/configs/gitconfig
     ~/.xprofile: meta/configs/xprofile
     ~/.xinitrc: meta/configs/xinitrc

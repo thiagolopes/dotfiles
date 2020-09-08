@@ -1,0 +1,61 @@
+clear
+ctrl+apostrophe start
+Escape end
+ctrl+bracketleft end
+q record ~/.keynav_macros
+shift+at playback
+a history-back
+
+# i3
+j cut-left
+k cut-down
+l cut-up
+ccedilla cut-right
+semicolon cut-right
+
+shift+j move-left
+shift+k move-down
+shift+l move-up
+shift+ccedilla move-right
+shift+semicolon move-right
+
+# AWSD
+a cut-left
+s cut-down
+w cut-up
+d cut-right
+
+shift+a move-left
+shift+s move-down
+shift+w move-up
+shift+d move-right
+
+# click
+space warp,click 1,end
+Return warp,click 2,end
+
+# TODO remap this
+# w warp
+
+#focus keys
+t windowzoom
+c cursorzoom 300 300
+e end
+
+# clicks
+1 click 1
+2 click 2
+3 click 3
+
+y cut-left,cut-up
+u cut-right,cut-up
+b cut-left,cut-down
+n cut-right,cut-down
+shift+y move-left,move-up
+shift+u move-right,move-up
+shift+b move-left,move-down
+shift+n move-right,move-down
+ctrl+y cut-left,cut-up
+ctrl+u cut-right,cut-up
+ctrl+b cut-left,cut-down
+ctrl+n cut-right,cut-down
