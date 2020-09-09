@@ -34,6 +34,7 @@
     active-background:           var(blue);
     selected-active-background:  rgba ( 39, 141, 182, 100 % );
     font:                        "Hack 10";
+    columns:                     4;
 }
 window {
     background-color: var(background);
