@@ -63,11 +63,11 @@ ctrl+u cut-right,cut-up
 ctrl+b cut-left,cut-down
 ctrl+n cut-right,cut-down
 
-shift+j cut-left,cut-up
-shift+k cut-left,cut-down
-shift+l cut-right,cut-up
-shift+ccedilla cut-right,cut-down
-shift+semicolon cut-right,cut-down
+ctrl+j cut-left,cut-up
+ctrl+k cut-left,cut-down
+ctrl+l cut-right,cut-up
+ctrl+ccedilla cut-right,cut-down
+ctrl+semicolon cut-right,cut-down
 
 # grids
 e grid-nav toggle
