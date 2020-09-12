@@ -35,18 +35,21 @@ space warp,click 1,end
 Return warp,click 2,end
 
 # TODO remap this
-# w warp
+q warp
+ctrl+space warp
 
 #focus keys
-t windowzoom
-c cursorzoom 300 300
-e end
+f windowzoom
+c cursorzoom 500 500
 
 # clicks
 1 click 1
 2 click 2
 3 click 3
+4 click 4
+5 click 5
 
+# cut
 y cut-left,cut-up
 u cut-right,cut-up
 b cut-left,cut-down
@@ -59,3 +62,13 @@ ctrl+y cut-left,cut-up
 ctrl+u cut-right,cut-up
 ctrl+b cut-left,cut-down
 ctrl+n cut-right,cut-down
+
+shift+j cut-left,cut-up
+shift+k cut-left,cut-down
+shift+l cut-right,cut-up
+shift+ccedilla cut-right,cut-down
+shift+semicolon cut-right,cut-down
+
+# grids
+e grid-nav toggle
+ctrl+shift+r restart
