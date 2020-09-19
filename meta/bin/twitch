@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+
+streamlink https://www.twitch.tv/$1 best --player "mpv" &
+java -jar .bin/chatty.jar
