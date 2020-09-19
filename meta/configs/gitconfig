@@ -13,3 +13,6 @@
     insteadOf = https://bitbucket.org/
 [url "git@gitlab.com:"]
     insteadOf = https://gitlab.com/
+
+[pull]
+	rebase = false
