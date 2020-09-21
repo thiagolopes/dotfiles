@@ -6,8 +6,17 @@ This is a dotfiles config with [Dotbot][dotbot].
 Usage
 -----------
 
-`git clone git@github.com:thiagolopes/dotfiles.git ~/.dotfiles`
+```
+git clone git@github.com:thiagolopes/dotfiles.git ~/.dotfiles
+cd .dotfiles
+./install
+```
 
+apply diff to model:
+`git apply <model>.diff`
+
+
+![screenshot with i3](./screenshot_i3.png)
 
 Inspiration
 -----------
