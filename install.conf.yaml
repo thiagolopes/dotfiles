@@ -30,6 +30,8 @@
     ~/.compton/compton.conf: meta/configs/compton
     ~/.config/i3/config: meta/configs/i3
     ~/.config/sway/config: meta/configs/sway
+    ~/.config/waybar/config: meta/configs/waybar
+    ~/.config/waybar/style.css: meta/configs/waybar-css
     ~/.config/i3wsr: meta/configs/i3wsr
     ~/.config/i3/i3status-rs.toml: meta/configs/i3status-rs
     ~/.config/dunst/dunstrc: meta/configs/dunstrc
