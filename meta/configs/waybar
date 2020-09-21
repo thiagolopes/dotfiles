@@ -109,7 +109,7 @@
     "format": "BRIGHT {percent}%"
   },
   "temperature":{
-    "format": "TEMP {}c°"
+    "format": "TEMP {}°c"
   },
   "left-arrow": {
     "format": "",
