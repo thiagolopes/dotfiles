@@ -23,21 +23,23 @@ font pango:Hack 9
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-
-# start a terminal
-bindsym $mod+Return exec urxvt
-
+# start a terminal - #TODO use alacritty from debian testing
+bindsym $mod+Return exec $HOME/.bin/alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $alt+F4      kill
+
+# ------------------------------------------------------------------------------------------
 
 # Menu
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-#extras
+# ------------------------------------------------------------------------------------------
+
+# Rofi
 # https://github.com/svenstaro/rofi-calc
 # https://github.com/Mange/rofi-emoji
 # https://github.com/erebe/greenclip
@@ -56,6 +58,7 @@ bindsym $alt+F1 exec "rofi -show window\
                            -kb-mode-next Control+f -kb-move-char-forward ''\
                            -kb-mode-previous Control+b -kb-move-char-back ''
 
+# ------------------------------------------------------------------------------------------
 
 # Focus
 ## change focus
@@ -86,6 +89,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# ------------------------------------------------------------------------------------------
 
 # Window actions
 ## split in horizontal orientation
@@ -122,6 +126,13 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Toggle between workspaces
+workspace_auto_back_and_forth yes
+
+# disable mouse focus
+focus_follows_mouse no
+
+# ------------------------------------------------------------------------------------------
 
 # Workspaces
 ## Define names for default workspaces for which we configure key bindings later on.
@@ -161,13 +172,15 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
+# ------------------------------------------------------------------------------------------
 
 # Session file
 ## reload the configuration file
 bindsym $mod+Shift+c reload
 
 ## restart sway inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+# hbindsym $mod+Shift+r restart
+bindsym $mod+Shift+r reload
 
 ## exit sway (logs you out of your X session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -187,9 +200,10 @@ mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
 }
 bindsym $mod+Shift+x mode "exit: [l]ogout, [r]eboot, [s]hutdown"
 
-
-## lock
+## Lock
 bindsym $alt+$ctrl+l exec swaylock -i $HOME/.cache/i3lock/current/blur.png
+
+# ------------------------------------------------------------------------------------------
 
 # Resize
 ## resize window (you can also use the mouse for that)
@@ -213,6 +227,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# ------------------------------------------------------------------------------------------
 
 # Bar
 ## Start i3bar to display a workspace bar (plus the system information i3status
@@ -224,6 +239,7 @@ bar {
         status_command ~/.bin/i3status-rs ~/.config/i3/i3status-rs.toml
 }
 
+# ------------------------------------------------------------------------------------------
 
 # Windows configs
 ## Telegram
@@ -242,30 +258,36 @@ bindsym $mod+y [instance="mumble"] scratchpad show; [instance="mumble"], move po
 for_window [instance="keepassxc"] floating enable, resize set 900 600
 for_window [instance="pavucontrol"] floating enable, resize set 900 600
 
+# Remove borders and no window title
+titlebar_padding 5 2
+# new_window normal 1 px
+# for_window [class="^.*"] border pixel 1
+# new_window 1pixel
+
+# Scratchpad:
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# ------------------------------------------------------------------------------------------
+
 ## Wallpaper
 output "*" bg $HOME/.wallpaper fill
 
 # Startup essecial
-exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pulseaudio --start
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper
-exec --no-startup-id ~/.bin/picom
 exec --no-startup-id gnome-settings-daemon
-exec_always --no-startup-id ~/.bin/i3wsr --config ~/.config/i3wsr
+exec_always --no-startup-id ~/.bin/swaywsr --config ~/.config/i3wsr
 exec --no-startup-id lxpolkit
-# exec --no-startup-id xfce4-power-manager
 exec --no-startup-id ~/.bin/greenclip daemon
-exec --no-startup-id keynav
 
+# use wayland alternative
+exec_always --no-startup-id dunst
 
-# Remove borders and no window title
-# new_window normal 1 px
-# for_window [class="^.*"] border pixel 1
-# new_window 1pixel
-
+# ------------------------------------------------------------------------------------------
 
 # Keysets
 ## SS
@@ -289,32 +311,24 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-
-# Toggle between workspaces
-workspace_auto_back_and_forth yes
-
-# disable mouse focus
-focus_follows_mouse no
+# ------------------------------------------------------------------------------------------
 
 ### Idle configuration
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f -i $HOME/.cache/i3lock/current/blur.png' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f -i $HOME/.cache/i3lock/current/blur.png'
 
 
 ### Input configuration
 ## Thinkpad
 input "2:10:TPPS/2_IBM_TrackPoint" {
-      dwt enabled
-      tap enabled
       natural_scroll enabled
       middle_emulation enabled
       scroll_method two_finger
 }
 
 input "2:7:SynPS/2_Synaptics_TouchPad" {
-      dwt enabled
       tap enabled
       natural_scroll enabled
       middle_emulation enabled
@@ -337,16 +351,11 @@ input "6058:20564:ThinkPad_Extra_Buttons" {
        xkb_options ctrl:nocaps
 }
 
-# Scratchpad:
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+# ------------------------------------------------------------------------------------------
 
-# Mouse theme
-# seat seat0 xcursor_theme Adwaita 48
-
-include @sysconfdir@/sway/config.d/*
-
-# gaps
+# GAPS
 gaps inner 1
 # gaps outer 2
 smart_gaps on
+
+include @sysconfdir@/sway/config.d/*
