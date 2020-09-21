@@ -285,7 +285,9 @@ exec --no-startup-id lxpolkit
 exec --no-startup-id ~/.bin/greenclip daemon
 
 # use wayland alternative
-exec_always --no-startup-id dunst
+exec_always --no-startup-id mako --background-color=#212121DD \
+                                 --font="Hack 09" --text-color=#ffffff --icons=1 \
+                                 --padding=10
 
 # ------------------------------------------------------------------------------------------
 
