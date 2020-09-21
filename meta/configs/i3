@@ -261,6 +261,7 @@ exec_always --no-startup-id ~/.bin/i3wsr --config ~/.config/i3wsr
 exec --no-startup-id lxpolkit
 # exec --no-startup-id xfce4-power-manager
 exec --no-startup-id ~/.bin/greenclip daemon
+exec --no-startup-id keynav
 
 
 # Remove borders and no window title
