@@ -261,9 +261,8 @@ for_window [instance="pavucontrol"] floating enable, resize set 900 600
 
 # Remove borders and no window title
 titlebar_padding 5 2
-# new_window normal 1 px
+hide_edge_borders smart
 # for_window [class="^.*"] border pixel 1
-# new_window 1pixel
 
 # Scratchpad:
 bindsym $mod+Shift+minus move scratchpad
@@ -355,7 +354,7 @@ input "6058:20564:ThinkPad_Extra_Buttons" {
 # ------------------------------------------------------------------------------------------
 
 # GAPS
-gaps inner 3
+gaps inner 4
 # gaps outer 2
 smart_gaps on
 
