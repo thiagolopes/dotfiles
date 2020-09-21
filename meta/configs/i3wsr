@@ -6,3 +6,7 @@ Brave-browser = "Brave"
 
 [general]
 separator = "  "
+
+[options]
+remove_duplicates = true
+no_names = true
