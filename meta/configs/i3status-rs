@@ -21,6 +21,13 @@ interval = 10
 chip = "*-isa-*"
 
 [[block]]
+device = "BAT1"
+block = "battery"
+interval = 10
+format = "{percentage}% {time}"
+
+[[block]]
+device = "BAT0"
 block = "battery"
 interval = 10
 format = "{percentage}% {time}"
