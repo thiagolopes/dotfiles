@@ -238,7 +238,7 @@ bindsym $mod+r mode "resize"
         # status_command $HOME/.bin/waybar
 # }
 
-exec --no-startup-id $HOME/.bin/waybar -c $HOME/.config/waybar/config
+exec $HOME/.bin/waybar -c $HOME/.config/waybar/config
 
 # ------------------------------------------------------------------------------------------
 
