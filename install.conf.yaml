@@ -26,6 +26,7 @@
     ~/.Xresources: meta/configs/Xresources
     ~/.Xdefauts : meta/configs/Xresources
     ~/.urxvt/ext: meta/configs/urxvt
+    ~/.config/alacritty/alacritty.yml: meta/configs/alacritty
     ~/.config/neofetch: meta/configs/neofetch/
     ~/.compton/compton.conf: meta/configs/compton
     ~/.config/i3/config: meta/configs/i3
