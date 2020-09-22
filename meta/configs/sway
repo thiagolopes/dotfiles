@@ -232,12 +232,6 @@ bindsym $mod+r mode "resize"
 # Bar
 ## Start i3bar to display a workspace bar (plus the system information i3status
 ## finds out, if available)
-# bar {
-        # font pango:Hack 9
-        # position bottom
-        # status_command $HOME/.bin/waybar
-# }
-
 exec $HOME/.bin/waybar -c $HOME/.config/waybar/config
 
 # ------------------------------------------------------------------------------------------
@@ -288,6 +282,8 @@ exec --no-startup-id ~/.bin/greenclip daemon
 exec_always --no-startup-id mako --background-color=#212121DD \
                                  --font="Hack 09" --text-color=#ffffff --icons=1 \
                                  --padding=10
+
+bindsym $ctrl+space exec makoctl dismiss
 
 # ------------------------------------------------------------------------------------------
 
