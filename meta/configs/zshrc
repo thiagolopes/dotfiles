@@ -105,3 +105,7 @@ if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]
 fi
 
 bindkey -e
+
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+    alias colorpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:- | tail -n 1 | cut -d " " -f 4 | wl-copy'
+fi
