@@ -183,22 +183,20 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r reload
 
 ## exit sway (logs you out of your X session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (S) shutdown, (R) UEFI
+mode "$mode_system" {
+    bindsym l exec swaylock -i $HOME/.cache/i3lock/current/blur.png, mode "default"
+    bindsym e exit
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym Shift+r exec --no-startup-id systemctl reboot --firmware-setup, mode "default"
 
-# bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 9" \
-# -m "Do you really want to exit?" \
-# -B "    Exit " "i3-msg exit" \
-# -B "    Reboot " "pkill i3-nagbar && systemctl reboot" \
-# -B "    Shutdown " "pkill i3-nagbar && systemctl poweroff"
-
-mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
-  bindsym l exec i3-msg exit
-  bindsym r exec systemctl reboot
-  bindsym s exec systemctl shutdown
-  bindsym Escape mode "default"
-  bindsym Return mode "default"
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
-bindsym $mod+Shift+x mode "exit: [l]ogout, [r]eboot, [s]hutdown"
+bindsym $mod+Shift+e mode "$mode_system"
 
 ## Lock
 bindsym $alt+$ctrl+l exec swaylock -i $HOME/.cache/i3lock/current/blur.png
