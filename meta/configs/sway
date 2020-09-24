@@ -315,6 +315,7 @@ bindsym XF86AudioPrev exec playerctl previous
 exec swayidle -w \
          timeout 300 'swaylock -f -i $HOME/.cache/i3lock/current/blur.png' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         after-resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -i $HOME/.cache/i3lock/current/blur.png'
 
 
