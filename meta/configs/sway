@@ -275,6 +275,7 @@ exec --no-startup-id gnome-settings-daemon
 exec_always --no-startup-id ~/.bin/swaywsr --config ~/.config/i3wsr
 exec --no-startup-id lxpolkit
 exec --no-startup-id ~/.bin/greenclip daemon
+exec --no-startup-id ~/.bin/spotifyd
 
 # use wayland alternative
 exec_always --no-startup-id mako --background-color=#212121DD \
