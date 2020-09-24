@@ -263,8 +263,7 @@ bindsym $mod+minus scratchpad show
 # ------------------------------------------------------------------------------------------
 
 ## Wallpaper
-## output "*" bg $HOME/.wallpaper fill
-exec_always --no-startup-id $HOME/.bin/settimed $HOME/.mojave/mojave-timed.xml
+output "*" bg $HOME/.wallpaper fill
 
 # Startup essecial
 exec --no-startup-id udiskie
