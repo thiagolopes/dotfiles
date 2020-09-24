@@ -283,7 +283,7 @@ exec_always --no-startup-id mako --background-color=#212121DD \
                                  --font="Hack 09" --text-color=#ffffff --icons=1 \
                                  --padding=10
 
-bindsym $ctrl+space exec makoctl dismiss
+bindsym $ctrl+alt+space exec makoctl dismiss
 
 # ------------------------------------------------------------------------------------------
 
