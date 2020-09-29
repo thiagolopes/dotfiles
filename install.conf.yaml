@@ -21,6 +21,7 @@
     ~/.xinitrc: meta/configs/xinitrc
     ~/.conkyrc: meta/configs/conkyrc
     ~/.zshrc: meta/configs/zshrc
+    ~/.zshenv: meta/configs/zshenv
     ~/.xmodmap: meta/configs/xmodmap
     ~/.xmodmap_macbook: meta/configs/xmodmap_macbook
     ~/.Xresources: meta/configs/Xresources
