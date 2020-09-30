@@ -72,7 +72,7 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "disk": {
-    "path": "/",
+    "path": "/home/",
     "format": "{path} {free} ",
     "interval": 30
   },
