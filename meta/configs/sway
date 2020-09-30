@@ -24,7 +24,7 @@ font pango:Hack 9
 floating_modifier $mod
 
 # start a terminal - #TODO use alacritty from debian testing
-bindsym $mod+Return exec $HOME/.bin/alacritty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -230,7 +230,7 @@ bindsym $mod+r mode "resize"
 # Bar
 ## Start i3bar to display a workspace bar (plus the system information i3status
 ## finds out, if available)
-exec $HOME/.bin/waybar -c $HOME/.config/waybar/config
+exec waybar -c $HOME/.config/waybar/config
 
 # ------------------------------------------------------------------------------------------
 
@@ -274,8 +274,9 @@ exec_always --no-startup-id feh --bg-fill ~/.wallpaper
 exec --no-startup-id gnome-settings-daemon
 exec_always --no-startup-id ~/.bin/swaywsr --config ~/.config/i3wsr
 exec --no-startup-id lxpolkit
-exec --no-startup-id ~/.bin/greenclip daemon
-exec --no-startup-id ~/.bin/spotifyd
+exec wl-paste -t text --watch clipman store
+exec --no-startup-id spotifyd
+exec --no-startup-id gammastep
 
 # use wayland alternative
 exec_always --no-startup-id mako --background-color=#212121DD \
