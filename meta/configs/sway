@@ -42,16 +42,16 @@ bindsym $alt+F4      kill
 # Rofi
 # https://github.com/svenstaro/rofi-calc
 # https://github.com/Mange/rofi-emoji
-# https://github.com/erebe/greenclip
 # https://github.com/marvinkreis/rofi-file-browser-extended#installation
 bindsym $mod+d exec "rofi -show drun -theme oxide -sidebar-mode -show-icons\
                            -kb-mode-next Control+f -kb-move-char-forward ''\
                            -kb-mode-previous Control+b -kb-move-char-back ''\
-                           -modi calc,window,emoji,run,'clipboard:~/.bin/greenclip print'"
+                           -modi calc,window,emoji,run,'clipboard:clipman pick --tool=STDOUT'"
 bindsym $alt+F2 exec "rofi -show drun -theme oxide -sidebar-mode -show-icons\
                            -kb-mode-next Control+f -kb-move-char-forward ''\
                            -kb-mode-previous Control+b -kb-move-char-back ''\
-                           -modi calc,window,emoji,run,'clipboard:~/.bin/greenclip print'"
+                           -modi calc,window,emoji,run,'clipboard:clipman pick --tool=STDOUT'"
+
 ## open filebrowser
 bindsym $alt+F1 exec "rofi -show window\
                            -theme oxide -sidebar-mode -show-icons\
