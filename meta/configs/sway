@@ -272,7 +272,6 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id pulseaudio --start
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper
 exec --no-startup-id gnome-settings-daemon
-exec_always --no-startup-id ~/.bin/swaywsr --config ~/.config/i3wsr
 exec --no-startup-id lxpolkit
 exec --no-startup-id spotifyd
 
