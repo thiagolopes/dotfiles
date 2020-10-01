@@ -46,11 +46,11 @@ bindsym $alt+F4      kill
 bindsym $mod+d exec "rofi -show drun -theme oxide -sidebar-mode -show-icons\
                            -kb-mode-next Control+f -kb-move-char-forward ''\
                            -kb-mode-previous Control+b -kb-move-char-back ''\
-                           -modi calc,window,emoji,run,'clipboard:clipman pick --tool=STDOUT'"
+                           -modi calc,window,emoji,run"
 bindsym $alt+F2 exec "rofi -show drun -theme oxide -sidebar-mode -show-icons\
                            -kb-mode-next Control+f -kb-move-char-forward ''\
                            -kb-mode-previous Control+b -kb-move-char-back ''\
-                           -modi calc,window,emoji,run,'clipboard:clipman pick --tool=STDOUT'"
+                           -modi calc,window,emoji,run"
 
 ## open filebrowser
 bindsym $alt+F1 exec "rofi -show window\
@@ -274,9 +274,7 @@ exec_always --no-startup-id feh --bg-fill ~/.wallpaper
 exec --no-startup-id gnome-settings-daemon
 exec_always --no-startup-id ~/.bin/swaywsr --config ~/.config/i3wsr
 exec --no-startup-id lxpolkit
-exec wl-paste -t text --watch clipman store
 exec --no-startup-id spotifyd
-exec --no-startup-id gammastep
 
 # use wayland alternative
 exec_always --no-startup-id mako --background-color=#212121DD \
@@ -356,5 +354,10 @@ input "6058:20564:ThinkPad_Extra_Buttons" {
 gaps inner 4
 # gaps outer 2
 smart_gaps on
+
+
+exec --no-startup-id swaymsg 'workspace 1; exec alacritty'
+exec --no-startup-id swaymsg 'workspace 1; exec emacs'
+exec --no-startup-id swaymsg 'workspace 2; exec firefox'
 
 include @sysconfdir@/sway/config.d/*
