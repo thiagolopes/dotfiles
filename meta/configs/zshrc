@@ -60,6 +60,8 @@ alias update='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove
 alias cat='bat'
 alias remove_duplicate_lines='awk '"'"'!visited[$0]++'"'"''
 alias b='buku --suggest'
+alias docker=podman
+alias docker-compose=podman-compose
 
 ##### Navigation
 alias ..='cd ..'

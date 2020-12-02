@@ -18,3 +18,5 @@ export GPG_TTY=$(tty)
 export WORK_FOLDER=./Work/
 export PROJECT_HOME=$WORK_FOLDER
 export WORKON_HOME=$HOME/.virtualenvs
+
+export AWS_VAULT_BACKEND=file
