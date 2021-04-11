@@ -55,7 +55,7 @@ alias semacs='emacs -nw -Q'
 [ -s "$WORK_FOLDER" ] && alias work='emacs -nw "${WORK_FOLDER}"/Documents/Orgs/personal_notes.org'
 alias notes='emacs -nw "$HOME"/Documents/Orgs/work_olist_notes.org'
 alias todo='emacs -nw "$HOME"/Documents/Orgs/todo.org'
-alias python_dev='pip install rope jedi flake8 autopep8 yapf isort elpy'
+alias dependencies_python='pip install rope jedi flake8 autopep8 yapf isort elpy "'"python-language-server[all]"'"'
 alias update='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove'
 alias cat='bat'
 alias remove_duplicate_lines='awk '"'"'!visited[$0]++'"'"''
@@ -70,19 +70,26 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ~='cd ~'
-# Easy report
-alias ls='ls -Fh --color=auto --group-directories-first'
 
 ##### Rust
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
 
 ##### Autostart X
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-    exec startx
+if [[ $(uname -s) == "Linux" ]]; then
+    if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+	exec startx
+    fi
+    alias ls='ls -Fh --color=auto --group-directories-first'
 fi
 
 bindkey -e
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
     alias colorpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:- | tail -n 1 | cut -d " " -f 4 | wl-copy'
+fi
+
+##### Mac OS
+if [[ $(uname -s) == "Darwin" ]]; then
+    source $HOME/.iterm2_shell_integration.zsh
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 fi

@@ -8,6 +8,7 @@ export GOPATH=$HOME/Documents/Go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PIP_REQUIRE_VIRTUALENV=true
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$WORK_FOLDER
@@ -19,4 +20,11 @@ export WORK_FOLDER=./Work/
 export PROJECT_HOME=$WORK_FOLDER
 export WORKON_HOME=$HOME/.virtualenvs
 
-export AWS_VAULT_BACKEND=file
+##### Mac OS
+if [[ $(uname -s) == "Darwin" ]]; then
+    export AWS_VAULT_BACKEND=file
+    export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+    export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+    export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+    export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+fi
