@@ -49,6 +49,11 @@ workon() {
     $0 "$@"
 }
 
+function doc {
+    local what=$1
+    curl "https://cheat.sh/$what" | less
+}
+
 ##### Alias
 alias emacs='emacs -nw'
 alias semacs='emacs -nw -Q'
