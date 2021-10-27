@@ -17,17 +17,13 @@
 - link:
     ~/.keynavrc: meta/configs/keynavrc
     ~/.gitconfig: meta/configs/gitconfig
-    ~/.xprofile: meta/configs/xprofile
     ~/.xinitrc: meta/configs/xinitrc
-    ~/.conkyrc: meta/configs/conkyrc
     ~/.zshrc: meta/configs/zshrc
     ~/.zshenv: meta/configs/zshenv
     ~/.xmodmap: meta/configs/xmodmap
-    ~/.xmodmap_macbook: meta/configs/xmodmap_macbook
     ~/.Xresources: meta/configs/Xresources
     ~/.Xdefauts : meta/configs/Xresources
     ~/.urxvt/ext: meta/configs/urxvt
-    ~/.config/alacritty/alacritty.yml: meta/configs/alacritty
     ~/.config/neofetch: meta/configs/neofetch/
     ~/.compton/compton.conf: meta/configs/compton
     ~/.config/i3/config: meta/configs/i3
@@ -35,7 +31,6 @@
     ~/.config/sway/env: meta/configs/sway-env
     ~/.config/waybar/config: meta/configs/waybar
     ~/.config/waybar/style.css: meta/configs/waybar-css
-    ~/.config/i3wsr: meta/configs/i3wsr
     ~/.config/i3/i3status-rs.toml: meta/configs/i3status-rs
     ~/.config/dunst/dunstrc: meta/configs/dunstrc
     ~/.config/ranger/rc.conf: meta/configs/ranger.rc
