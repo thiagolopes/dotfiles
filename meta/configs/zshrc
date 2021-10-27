@@ -1,29 +1,23 @@
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="fishy"
 
 plugins=(
-    debian
     common-aliases
     emacs
     git
     git-extras
     github
     gnu-utils
-    heroku
     history-substring-search
     python
     sudo
-    tmux
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
 )
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
-
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-##### NVM
+# NVM
 function nvm {
     if [ -s "$NVM_DIR/nvm.sh" ]; then
         . "$NVM_DIR/nvm.sh"
@@ -49,24 +43,20 @@ workon() {
     $0 "$@"
 }
 
+# doc helper
 function doc {
     local what=$1
     curl "https://cheat.sh/$what" | less
 }
 
-##### Alias
+# Alias
 alias emacs='emacs -nw'
-alias semacs='emacs -nw -Q'
-[ -s "$WORK_FOLDER" ] && alias work='emacs -nw "${WORK_FOLDER}"/Documents/Orgs/personal_notes.org'
-alias notes='emacs -nw "$HOME"/Documents/Orgs/work_olist_notes.org'
-alias todo='emacs -nw "$HOME"/Documents/Orgs/todo.org'
-alias dependencies_python='pip install rope jedi flake8 autopep8 yapf isort elpy "'"python-language-server[all]"'"'
-alias update='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove'
-alias cat='bat'
 alias remove_duplicate_lines='awk '"'"'!visited[$0]++'"'"''
-alias b='buku --suggest'
+alias ls='ls -Fh --color=auto --group-directories-first'
+alias docker=podman
+alias docker-compose=podman-compose
 
-##### Navigation
+# Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
@@ -74,28 +64,23 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ~='cd ~'
 
-##### Rust
+# Rust
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
 
-##### Autostart X
+# Autostart X
 if [[ $(uname -s) == "Linux" ]]; then
-    if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
-    fi
-    alias ls='ls -Fh --color=auto --group-directories-first'
-    alias docker=podman
-    alias docker-compose=podman-compose
-
+    exec startx
 fi
-
-bindkey -e
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
     alias colorpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:- | tail -n 1 | cut -d " " -f 4 | wl-copy'
 fi
 
-##### Mac OS
+# Mac OS
 if [[ $(uname -s) == "Darwin" ]]; then
     source $HOME/.iterm2_shell_integration.zsh
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+    unalias ls
+    unalias docker
+    unalias docker-compose
 fi

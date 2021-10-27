@@ -1,7 +1,6 @@
-[ -f /etc/xprofile ] && . /etc/xprofile
-[ -f /etc/X11/Xsession ] && . /etc/X11/Xsession
-
-xscreensaver &
+pipewire
+pipewire-pulse
+setxkbmap -model abnt2 -layout br -variant abnt2 
+setxkbmap -option ctrl:nocaps
 exec i3
-export QT_QPA_PLATFORMTHEME=qt5ct
-[ -f ~/.xprofile ] && . ~/.xprofile
+
