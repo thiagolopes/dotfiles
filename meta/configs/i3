@@ -24,7 +24,7 @@ bindsym $mod+Shift+q kill
 bindsym $alt+F4      kill
 
 # Menu
-bindsym $mod+d exec i3-dmenu-desktop
+bindsym $mod+d exec dmenu_run
 
 # Focus
 ## change focus
