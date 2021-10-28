@@ -68,7 +68,7 @@ alias ~='cd ~'
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
 
 # Autostart X
-if [[ $(uname -s) == "Linux" ]] && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
     exec startx
 fi
 
