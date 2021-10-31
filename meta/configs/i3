@@ -182,7 +182,6 @@ bindsym $mod+t [title="Telegram"] scratchpad show; [title="Telegram"] move posit
 for_window [instance="pavucontrol"] floating enable, resize set 900 600
 
 # Startup essecial
-exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
