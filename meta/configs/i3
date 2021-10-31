@@ -13,7 +13,7 @@ font pango:Hack 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec st -f Hack-11
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -24,7 +24,7 @@ bindsym $mod+Shift+q kill
 bindsym $alt+F4      kill
 
 # Menu
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -i -fn Hack-11
 
 # Focus
 ## change focus
