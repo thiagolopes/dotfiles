@@ -63,6 +63,7 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ~='cd ~'
+alias thumb_all='feh --montage --thumb-height 150 --thumb-width 150 --index-info "%wx%h" --output .'
 
 # Rust
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
