@@ -137,11 +137,14 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 ## exit i3 (logs you out of your X session)
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 ## lock
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000
 bindsym $alt+$ctrl+l exec i3lock -c 000000
+
+## clipmenu
+bindsym $alt+$ctrl+p exec clipmenu
 
 # resize
 mode "resize" {
