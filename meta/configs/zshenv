@@ -21,6 +21,12 @@ export WORK_FOLDER=./Work/
 export PROJECT_HOME=$WORK_FOLDER
 export WORKON_HOME=$HOME/.virtualenvs
 
+export HSTR_CONFIG=hicolor       # get more colors
+export HISTCONTROL=ignorespace   # leading space hides commands from history
+export HISTFILESIZE=10000        # increase history file size (default is 500)
+export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+
 ##### Mac OS
 if [[ $(uname -s) == "Darwin" ]]; then
     export AWS_VAULT_BACKEND=file
