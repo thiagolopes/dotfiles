@@ -5,6 +5,7 @@ set $up l
 set $down k
 set $left j
 set $right ccedilla
+set $terminal alacritty
 
 # Font for window titles
 font pango:Hack 10
@@ -13,7 +14,7 @@ font pango:Hack 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st -f Hack-11
+bindsym $mod+Return exec $terminal
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -21,7 +22,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # kill focused window
 bindsym $mod+Shift+q kill
-bindsym $alt+F4      kill
+bindsym $alt+F4 kill
 
 # Menu
 bindsym $mod+d exec dmenu_run -i -fn Hack-11
@@ -87,12 +88,7 @@ bindsym $mod+Shift+s exec "i3-msg 'floating toggle;sticky toggle; resize shrink 
 ## focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
 # Workspaces
-## Define names for default workspaces for which we configure key bindings later on.
-## We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -128,8 +124,6 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-
-# Session file
 ## reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -149,7 +143,7 @@ bindsym $alt+$ctrl+p exec clipmenu
 # resize
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-        bindsym $left resize shrink width 10 px or 10 ppt
+	bindsym $left resize shrink width 10 px or 10 ppt
         bindsym $down resize grow height 10 px or 10 ppt
         bindsym $up resize shrink height 10 px or 10 ppt
         bindsym $right resize grow width 10 px or 10 ppt
