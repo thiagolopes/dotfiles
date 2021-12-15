@@ -1,6 +1,5 @@
-ZSH_THEME="fishy"
-
 plugins=(
+    docker
     common-aliases
     emacs
     git
@@ -14,10 +13,14 @@ plugins=(
     zsh-completions
     zsh-syntax-highlighting
 )
+ZSH_THEME="fishy"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
+
+setopt histignorespace
+bindkey -s "\C-r" "\C-a hstr -- \C-j"
 source $ZSH/oh-my-zsh.sh
 
-# NVM
+# NVM lazy config
 function nvm {
     if [ -s "$NVM_DIR/nvm.sh" ]; then
         . "$NVM_DIR/nvm.sh"
@@ -26,7 +29,7 @@ function nvm {
     fi
 }
 
-# Lazy load pyenv
+# Lazyload Pyenv
 if type pyenv > /dev/null; then
     pyenv() {
         unfunction $0
@@ -43,8 +46,7 @@ workon() {
     $0 "$@"
 }
 
-# doc helper
-function doc {
+function help {
     local what=$1
     curl "https://cheat.sh/$what" | less
 }
@@ -64,11 +66,12 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ~='cd ~'
 alias thumb_all='feh --montage --thumb-height 150 --thumb-width 150 --index-info "%wx%h" --output .'
+alias hh=hstr
 
 # Rust
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
 
-# Autostart X
+# Autostart X on TTY1
 if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
     exec startx
 fi
@@ -77,7 +80,7 @@ if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
     alias colorpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:- | tail -n 1 | cut -d " " -f 4 | wl-copy'
 fi
 
-# Mac OS
+# When is Darwin
 if [[ $(uname -s) == "Darwin" ]]; then
     source $HOME/.iterm2_shell_integration.zsh
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
