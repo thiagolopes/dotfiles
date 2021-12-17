@@ -55,8 +55,11 @@ function help {
 alias emacs='emacs -nw'
 alias remove_duplicate_lines='awk '"'"'!visited[$0]++'"'"''
 alias ls='ls -Fh --color=auto --group-directories-first'
-alias docker=podman
-alias docker-compose=podman-compose
+
+if ! type docker &> /dev/null; then
+    alias docker=podman
+    alias docker-compose=podman-compose
+fi
 
 # Navigation
 alias ..='cd ..'
