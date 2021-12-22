@@ -46,7 +46,7 @@ workon() {
     $0 "$@"
 }
 
-function help {
+function doc {
     local what=$1
     curl "https://cheat.sh/$what" | less
 }
