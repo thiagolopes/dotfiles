@@ -184,12 +184,12 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id natural-scroll
 exec --no-startup-id snixembed
 exec --no-startup-id clipmenud
+exec --no-startup-id picom
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper
 
 new_window normal 1 px
 
 # Keysets
-## SS
 bindsym --release Print exec flameshot gui -p $HOME
 
 ## Sound
