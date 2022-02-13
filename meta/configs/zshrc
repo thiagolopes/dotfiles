@@ -85,7 +85,7 @@ if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
     alias colorpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:- | tail -n 1 | cut -d " " -f 4 | wl-copy'
 fi
 
-# When is Darwin
+# When in Darwin
 if [[ $(uname -s) == "Darwin" ]]; then
     source $HOME/.iterm2_shell_integration.zsh
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true

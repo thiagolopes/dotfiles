@@ -5,6 +5,8 @@
     editor = emacs
 [alias]
     movie = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-    update-master = !git checkout master && git pull origin master && git checkout -
+    update-main = !git checkout main && git pull origin main && git checkout -
 [pull]
     rebase = false
+[init]
+    defaultBranch = main

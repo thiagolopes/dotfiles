@@ -6,9 +6,10 @@ set $down k
 set $left j
 set $right ccedilla
 set $terminal alacritty
+set $font Inconsolata
 
 # Font for window titles
-font pango:Hack 10
+font pango:$font 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -25,7 +26,7 @@ bindsym $mod+Shift+q kill
 bindsym $alt+F4 kill
 
 # Menu
-bindsym $mod+d exec dmenu_run -i -fn Hack-11
+bindsym $mod+d exec dmenu_run -i -fn Inconsolata-13
 
 # Focus
 ## change focus
@@ -164,7 +165,7 @@ bindsym $mod+r mode "resize"
 # Bar
 bar {
         status_command i3status
-        font pango:Hack 9
+        font pango:$font 11
         position top
 }
 
