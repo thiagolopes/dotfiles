@@ -33,6 +33,7 @@ function nvm {
 if type pyenv > /dev/null; then
     pyenv() {
         unfunction $0
+	eval "$(pyenv init --path)"
         eval "$(command pyenv init -)"
         eval "$(command pyenv virtualenv-init -)"
         pyenv virtualenvwrapper
