@@ -1,6 +1,7 @@
-pipewire
-pipewire-pulse
-setxkbmap -model abnt2 -layout br -variant abnt2 
+# pipewire
+# pipewire-pulse
+setxkbmap -model abnt2 -layout br -variant abnt2
 setxkbmap -option ctrl:nocaps
-exec i3
-
+exec mate-session
+# exec /home/thiago/Programming/twm/twm
+# exec awesome
