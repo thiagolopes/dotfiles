@@ -176,7 +176,10 @@ for_window [title="Telegram"] resize set 900 600
 for_window [title="Telegram"] move scratchpad
 bindsym $mod+t [title="Telegram"] scratchpad show; [title="Telegram"] move position center
 
-## Without keybind
+## Others
+for_window [class="zoom"] floating enable
+for_window [class="zoom" title="Zoom - Licensed Account"] floating disable
+for_window [class="zoom" title="Zoom Meeting"] floating disable
 for_window [instance="pavucontrol"] floating enable, resize set 900 600
 
 # Startup essecial
