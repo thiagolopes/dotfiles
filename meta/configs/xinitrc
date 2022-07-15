@@ -2,6 +2,6 @@
 # pipewire-pulse
 setxkbmap -model abnt2 -layout br -variant abnt2
 setxkbmap -option ctrl:nocaps
-exec mate-session
+exec startxfce4
 # exec /home/thiago/Programming/twm/twm
 # exec awesome
