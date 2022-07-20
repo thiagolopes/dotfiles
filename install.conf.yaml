@@ -33,3 +33,4 @@
     ~/.config/rofi/oxide.rasi: meta/configs/rofi-oxide
     ~/.pdbrc: meta/configs/pdbrc
     ~/.bin: meta/bin
+    ~/.conky.conf: meta/conky
