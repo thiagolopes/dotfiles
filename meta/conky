@@ -1,0 +1,92 @@
+-- Conky, a system monitor https://github.com/brndnmtthws/conky
+--
+-- This configuration file is Lua code. You can write code in here, and it will
+-- execute when Conky loads. You can use it to generate your own advanced
+-- configurations.
+--
+-- Try this (remove the `--`):
+--
+--   print("Loading Conky config")
+--
+-- For more on Lua, see:
+-- https://www.lua.org/pil/contents.html
+
+conky.config = {
+    alignment = 'top_right',
+    background = false,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    extra_newline = false,
+    font = 'DejaVu Sans Mono:size=12',
+    gap_x = 60,
+    gap_y = 60,
+    minimum_height = 5,
+    minimum_width = 5,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_type = 'desktop',
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    show_graph_range = false,
+    show_graph_scale = false,
+    stippled_borders = 0,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+}
+
+conky.text = [[
+${color grey}Info:$color ${scroll 32 Conky $conky_version - $sysname $nodename $kernel $machine}
+${color grey}Today:$color ${time %a, %d %b %Y %H:%M:%S}
+$hr
+${color grey}Uptime:$color $uptime
+${color grey}Frequency (in MHz):$color $freq
+${color grey}Frequency (in GHz):$color $freq_g
+${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
+${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
+${color grey}CPU Usage:$color $cpu% ${cpubar 4}
+${cpugraph cpu0 50}
+${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+$hr
+${color grey}File system:
+ / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
+$hr
+${color gray}GPU:
+${color gray}Usage:$color ${exec cat /sys/class/drm/card0/device/gpu_busy_percent}% ${execbar "cat /sys/class/drm/card0/device/gpu_busy_percent"}
+${color gray}${execgraph "cat /sys/class/drm/card0/device/gpu_busy_percent" 50}
+${color gray}Temperature C:$color ${hwmon 2 temp 1}
+${color gray}GPU (in MHz):$color ${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card0/device/pp_dpm_sclk}
+${color gray}Memory (in MHz):$color ${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card0/device/pp_dpm_mclk}
+${color gray}Memory Usage:$color ${exec numfmt --to=iec < /sys/class/drm/card0/device/mem_info_vram_used}
+$hr
+${color grey}Networking:
+Up:$color ${upspeed enp5s0} ${color grey} Down:$color ${downspeed enp5s0}
+${downspeedgraph enp5s0 50,180}${alignr}${upspeedgraph enp5s0 50,180}
+${color grey}WLAN:$color ${addr enp5s0} ${color grey}WAN:$color${exec curl -s https://ifconfig.me}
+${color grey}Outcome:$color${tcp_portmon 32767 65535 count}${color grey} Income:$color${tcp_portmon 1 32768 count}
+$hr
+${color grey}Name              PID     CPU%   MEM%
+${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${color lightgrey} ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
+${color lightgrey} ${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6}
+${color lightgrey} ${top name 7} ${top pid 7} ${top cpu 7} ${top mem 7}
+]]
