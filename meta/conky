@@ -69,7 +69,7 @@ ${color grey}File system:
 $hr
 ${color gray}GPU:
 ${color gray}Usage:$color ${exec cat /sys/class/drm/card0/device/gpu_busy_percent}% ${execbar "cat /sys/class/drm/card0/device/gpu_busy_percent"}
-${color gray}${execgraph "cat /sys/class/drm/card0/device/gpu_busy_percent" 50}
+$color${execgraph "cat /sys/class/drm/card0/device/gpu_busy_percent" 50}
 ${color gray}Temperature C:$color ${hwmon 2 temp 1}
 ${color gray}GPU (in MHz):$color ${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card0/device/pp_dpm_sclk}
 ${color gray}Memory (in MHz):$color ${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card0/device/pp_dpm_mclk}
