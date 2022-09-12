@@ -72,7 +72,7 @@ alias ~='cd ~'
 alias thumb_all='feh --montage --thumb-height 150 --thumb-width 150 --index-info "%wx%h" --output .'
 alias hh=hstr
 
-alias python-lsp='pip install "python-lsp-server[all]" flake8 isort pyls-isort pyls-flake8 pytest-icdiff pytest-tldr --upgrade '
+alias python-setup='pip install pyright isort pytest-icdiff pytest-tldr ipdb --upgrade '
 
 # Rust
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
