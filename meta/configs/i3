@@ -19,14 +19,14 @@ bindsym $mod+Return exec $terminal
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+# exec --no-startup-id dex --autostart --environment i3
 
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $alt+F4 kill
 
 # Menu
-bindsym $mod+d exec dmenu_run -i -fn Inconsolata-13
+# bindsym $mod+d exec dmenu_run -i -fn Inconsolata-13
 
 # Focus
 ## change focus
@@ -84,7 +84,7 @@ bindsym $mod+c move absolute position center
 
 ## set sticky mode
 ## bindsym $mod+Shift+s sticky toggle
-bindsym $mod+Shift+s exec "i3-msg 'floating toggle;sticky toggle; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 250px;move position 907px 580px;'"
+# bindsym $mod+Shift+s exec "i3-msg 'floating toggle;sticky toggle; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 250px;move position 907px 580px;'"
 
 ## focus the parent container
 bindsym $mod+a focus parent
@@ -135,11 +135,11 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 ## lock
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000
-bindsym $alt+$ctrl+l exec i3lock -c 000000
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000
+# bindsym $alt+$ctrl+l exec i3lock -c 000000
 
 ## clipmenu
-bindsym $alt+$ctrl+p exec clipmenu
+# bindsym $alt+$ctrl+p exec clipmenu
 
 # resize
 mode "resize" {
@@ -163,11 +163,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Bar
-bar {
-        status_command i3status
-        font pango:$font 11
-        position top
-}
+# bar {
+#         status_command i3status
+#         font pango:$font 11
+#         position top
+# }
 
 # Windows configs
 ## Telegram
@@ -183,18 +183,18 @@ for_window [class="zoom" title="Zoom Meeting"] floating disable
 for_window [instance="pavucontrol"] floating enable, resize set 900 600
 
 # Startup essecial
-exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
-exec --no-startup-id natural-scroll
-exec --no-startup-id snixembed
-exec --no-startup-id clipmenud
-exec --no-startup-id picom
+# exec --no-startup-id nm-applet
+# exec --no-startup-id blueman-applet
+# exec --no-startup-id natural-scroll
+# exec --no-startup-id snixembed
+# exec --no-startup-id clipmenud
+# exec --no-startup-id picom
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper
 
 new_window normal 1 px
 
 # Keysets
-bindsym --release Print exec flameshot gui -p $HOME
+# bindsym --release Print exec flameshot gui -p $HOME
 
 ## Sound
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -221,3 +221,10 @@ workspace_auto_back_and_forth yes
 
 # disable mouse focus
 focus_follows_mouse no
+
+#gaps
+for_window [class=".*"] border pixel 0
+gaps outer 10
+gaps inner 5
+
+
