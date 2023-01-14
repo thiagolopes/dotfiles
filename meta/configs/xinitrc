@@ -1,7 +1,24 @@
-# pipewire
-# pipewire-pulse
+# TO use X:
 setxkbmap -model abnt2 -layout br -variant abnt2
 setxkbmap -option ctrl:nocaps
-exec startxfce4
-# exec /home/thiago/Programming/twm/twm
+
+
+# exec startxfce4
+# exec gnome-session
+# exec i3
 # exec awesome
+
+# DWM
+dunst &
+nitrogen --restore &
+redshift -l -23:-47 &
+picom &
+natural-scroll &
+# Statusbar loop
+while true; do
+   xsetroot -name "$( date +"%F %R" )"
+   sleep 1m    # Update time every minute
+done &
+while true; do
+    dwm 2> ~/.dwm.log
+done
