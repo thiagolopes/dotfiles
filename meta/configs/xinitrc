@@ -9,11 +9,7 @@ setxkbmap -option ctrl:nocaps
 # exec awesome
 
 # DWM
-dunst &
-nitrogen --restore &
-redshift -l -23:-47 &
-picom &
-natural-scroll &
+copyq &
 # Statusbar loop
 while true; do
    xsetroot -name "$( date +"%F %R" )"
