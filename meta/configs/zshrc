@@ -77,11 +77,6 @@ alias python-setup='pip install pyright isort pytest-icdiff pytest-tldr ipdb --u
 # Rust
 [ -s $HOME/.cargo ] && source $HOME/.cargo/env
 
-# Autostart X on TTY1
-if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
-    exec startx
-fi
-
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
     alias colorpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:- | tail -n 1 | cut -d " " -f 4 | wl-copy'
 fi
@@ -94,3 +89,11 @@ if [[ $(uname -s) == "Darwin" ]]; then
     unalias docker
     unalias docker-compose
 fi
+
+# start x as default
+if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
+   startx
+   #  XDG_SESSION_TYPE=wayland dbus-run-session gnome-session
+fi
+
+
