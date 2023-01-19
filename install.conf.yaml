@@ -34,3 +34,4 @@
     ~/.pdbrc: meta/configs/pdbrc
     ~/.bin: meta/bin
     ~/.conky.conf: meta/conky
+    ~/.profile.icm: ./meta/configs/rtings-icc-profile.icm
