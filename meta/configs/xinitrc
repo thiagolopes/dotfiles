@@ -12,7 +12,10 @@ xset r rate 300 50
 copyq &
 # Statusbar loop
 while true; do
-   xsetroot -name "$( date +"%F %R" )"
+   FREE_DISK=$(df -h /home | awk '{ if ($6 == "/") print $4 }')
+   MEMORY=$(free -h | awk '(NR==2){ print $2 }')
+   DATE=$(date +"[%F] [%R]")
+   xsetroot -name "[mem: $MEMORY] [disk: $FREE_DISK] $DATE"
    sleep 1m    # Update time every minute
 done &
 while true; do
