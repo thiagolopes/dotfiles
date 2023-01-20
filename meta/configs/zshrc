@@ -94,6 +94,10 @@ fi
 if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
    startx
    #  XDG_SESSION_TYPE=wayland dbus-run-session gnome-session
+   exit
 fi
 
+if [ -x "$(command -v exa)" ]; then
+    alias ls='exa -l'
+fi
 
