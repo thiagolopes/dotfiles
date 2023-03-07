@@ -9,15 +9,16 @@ xset r rate 300 50
 # exec awesome
 
 # DWM
-copyq &
 # Statusbar loop
-while true; do
-   FREE_DISK=$(df -h /home | awk '{ if ($6 == "/") print $4 }')
-   MEMORY=$(free -h | awk '(NR==2){ print $2 }')
-   DATE=$(date +"[%F] [%R]")
-   xsetroot -name "[mem: $MEMORY] [disk: $FREE_DISK] $DATE"
-   sleep 1m    # Update time every minute
-done &
-while true; do
-    dwm 2> ~/.dwm.log
-done
+# while true; do
+#    FREE_DISK=$(df -h /home | awk '{ if ($6 == "/") print $4 }')
+#    MEMORY=$(free -h | awk '(NR==2){ print $2 }')
+#    DATE=$(date +"[%F] [%R]")
+#    xsetroot -name "[mem: $MEMORY] [disk: $FREE_DISK] $DATE"
+#    sleep 10    # Update every 10s
+# done &
+# while true; do
+#     dwm 2> ~/.dwm.log
+# done
+
+exec cinnamon-session
