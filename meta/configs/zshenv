@@ -26,15 +26,3 @@ export HISTCONTROL=ignorespace   # leading space hides commands from history
 export HISTFILESIZE=10000        # increase history file size (default is 500)
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
-
-# When in Darwin
-if [[ $(uname -s) == "Darwin" ]]; then
-    export AWS_VAULT_BACKEND=file
-    export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-    export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-    export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-    export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
-    export PATH="/usr/local/sbin:$PATH"
-    source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-    source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-fi
