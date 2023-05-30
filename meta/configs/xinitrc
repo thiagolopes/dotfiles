@@ -21,4 +21,5 @@ xset r rate 300 50
 #     dwm 2> ~/.dwm.log
 # done
 
-exec cinnamon-session
+export DESKTOP_SESSION=plasma
+exec startplasma-x11
