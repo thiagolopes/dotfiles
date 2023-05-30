@@ -92,13 +92,50 @@ fi
 
 # start x as default
 if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
-   dialog --yesno '    Run on Wayland? \n    (X.org Fallback)' 0 0
-   if [ $? = 0 ]; then
-       XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland
-   else
-       startx
-   fi
-   exit
+    dialog --title "Choose API" --menu "Wayland OR X.org?:" 10 50 2 \
+              1 "X.org" \
+              2 "Wayland" \
+              3 "Exit" \
+              2>/tmp/selection
+    selection=$(cat /tmp/selection)
+    rm -f /tmp/selection
+
+    case "$selection" in
+           1)
+               startx
+               ;;
+           2)
+               dialog --title "Choose" --menu "GNOME OR KDE?:" 10 50 2 \
+                      1 "KDE" \
+                      2 "GNOME" \
+                      3 "Exit" \
+                      2>/tmp/selection
+               selection=$(cat /tmp/selection)
+
+               rm -f /tmp/selection
+               case "$selection" in
+                   1)
+                       XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland
+                       ;;
+                   2)
+                       XDG_SESSION_TYPE=wayland dbus-run-session gnome-session 
+                       ;;
+                   3)
+                       exit
+                       ;;
+                   *)
+                       echo "NOT FOUND"
+                       ;;
+               esac
+               ;;
+           3)
+               exit
+               ;;
+           *)
+               echo "NOT FOUND"
+               ;;
+    esac
+
 fi
 
 if [ -x "$(command -v exa)" ]; then
