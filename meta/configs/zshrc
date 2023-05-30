@@ -75,7 +75,7 @@ alias hh=hstr
 alias python-setup='pip install pyright isort pytest-icdiff pytest-tldr ipdb --upgrade '
 
 # Rust
-[ -s $HOME/.cargo ] && source $HOME/.cargo/env
+[ -s $HOME/.cargo ] && source $HOME/.cargo/bin/
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
     alias colorpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:- | tail -n 1 | cut -d " " -f 4 | wl-copy'
