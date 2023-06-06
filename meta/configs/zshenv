@@ -4,7 +4,6 @@ export EDITOR='emacs'
 
 export NVM_DIR="$HOME/.nvm"
 
-export GOPATH=$HOME/Documents/Go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
@@ -27,7 +26,8 @@ export HISTFILESIZE=10000        # increase history file size (default is 500)
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 
+export NU_HOME=${HOME}/dev/nu
+export NUCLI_HOME=${NU_HOME}/nucli
+export PATH=${NUCLI_HOME}:${PATH}
 
-if [ -f "~/.nurc " ]; then
-    source "~/.nurc" 
-fi
+
