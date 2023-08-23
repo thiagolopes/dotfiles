@@ -103,15 +103,4 @@ if [ -x "$(command -v exa)" ]; then
     alias ls='exa -l'
 fi
 
-
-function run_main {
-  if [[ -e "main.c" ]]; then
-    gcc -o main main.c && ./main
-  elif [[ -e "main.cpp" ]]; then
-    g++ -o main main.cpp && ./main
-  else
-    echo "Error: No valid file found."
-  fi
-}
-
 source "~/.nurc" 2>/dev/null
