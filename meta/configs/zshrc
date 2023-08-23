@@ -91,50 +91,11 @@ if [[ $(uname -s) == "Darwin" ]]; then
 fi
 
 # start x as default
-if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
-    dialog --title "Choose API" --menu "Wayland OR X.org?:" 10 50 2 \
-              1 "X.org" \
-              2 "Wayland" \
-              3 "Exit" \
-              2>/tmp/selection
-    selection=$(cat /tmp/selection)
-    rm -f /tmp/selection
-
-    case "$selection" in
-           1)
-               startx
-               ;;
-           2)
-               dialog --title "Choose" --menu "GNOME OR KDE?:" 10 50 2 \
-                      1 "KDE" \
-                      2 "GNOME" \
-                      3 "Exit" \
-                      2>/tmp/selection
-               selection=$(cat /tmp/selection)
-
-               rm -f /tmp/selection
-               case "$selection" in
-                   1)
-                       XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland
-                       ;;
-                   2)
-                       XDG_SESSION_TYPE=wayland dbus-run-session gnome-session 
-                       ;;
-                   3)
-                       exit
-                       ;;
-                   *)
-                       echo "NOT FOUND"
-                       ;;
-               esac
-               ;;
-           3)
-               exit
-               ;;
-           *)
-               echo "NOT FOUND"
-               ;;
-    esac
+if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty2 ]]; then
+    DP_PATH="$(python ~/.display_manager.py)"
+    echo "Executing: $DP_PATH"
+    eval "$DP_PATH"
+    read -n 1
     exit
 fi
 
