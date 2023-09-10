@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# TODO FIXME
 id=`xinput list | grep -i "MX Vertical" | cut -d'=' -f2 | cut -d'[' -f1 | cut -d $'\n' -f1`
 natural_scrolling_id=`xinput list-props ${id} | \
                       grep -i "Natural Scrolling Enabled (" \

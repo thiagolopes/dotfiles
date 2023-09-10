@@ -1,0 +1,14 @@
+#! /usr/bin/sh
+
+cli_help(){
+    echo "second"
+}
+
+case "$1" in
+  deploy|d)
+    echo "first"
+    ;;
+  *)
+    cli_help
+    ;;
+esac
