@@ -16,7 +16,7 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 export GPG_TTY=$(tty)
 
-export WORK_FOLDER=./Work/
+export WORK_FOLDER=${HOME}/dev
 export PROJECT_HOME=$WORK_FOLDER
 export WORKON_HOME=$HOME/.virtualenvs
 
