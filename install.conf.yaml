@@ -19,19 +19,9 @@
     ~/.zshrc: meta/configs/zshrc
     ~/.zshenv: meta/configs/zshenv
     ~/.xmodmap: meta/configs/xmodmap
-    ~/.Xresources: meta/configs/Xresources
-    ~/.config/neofetch: meta/configs/neofetch/
-    ~/.compton/compton.conf: meta/configs/compton
     ~/.config/i3/config: meta/configs/i3
-    ~/.config/sway/config: meta/configs/sway
-    ~/.config/sway/env: meta/configs/sway-env
-    ~/.config/waybar/config: meta/configs/waybar
-    ~/.config/waybar/style.css: meta/configs/waybar-css
     ~/.config/i3/i3status-rs.toml: meta/configs/i3status-rs
-    ~/.config/dunst/dunstrc: meta/configs/dunstrc
     ~/.config/ranger/rc.conf: meta/configs/ranger.rc
-    ~/.config/rofi/oxide.rasi: meta/configs/rofi-oxide
     ~/.pdbrc: meta/configs/pdbrc
     ~/.bin: meta/bin
-    ~/.conky.conf: meta/conky
     ~/.profile.icm: ./meta/configs/rtings-icc-profile.icm
