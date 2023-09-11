@@ -27,7 +27,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -190,42 +190,34 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         separator_symbol ⁞
-
-        colors {
-               background #000000
-               statusline #ebdbb2
-               separator  #666666
-               focused_workspace  #458588 #458588 #ebdbb2
-               active_workspace   #83a598 #83a598 #ebdbb2
-               inactive_workspace #504945 #504945 #ebdbb2
-               urgent_workspace   #cc241d #cc241d #504945
-        }
 }
 
-# start my scripts
+# Start my local settings
 exec --no-startup-id natural-scroll
 exec --no-startup-id set-keyboard
 
-# gaps
+# GAPS
 gaps inner 4
 smart_gaps on
 
-# wallpaper
+# Wallpaper
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper
 
-# telegram toggle
+# Telegram toggle
 for_window [title="Telegram"] floating enable,
 for_window [title="Telegram"] resize set 900 800
 for_window [title="Telegram"] move scratchpad
 bindsym $mod+t [title="Telegram"] scratchpad show; [title="Telegram"] move position center
+# Pavucontrol
+for_window [instance="pavucontrol"] floating enable, resize set 900 600
+for_window [title="Spectacle"] floating enable, resize set 900 600
 
-#picture in picture
+# Picture in picture
 for_window [title="Picture-in-Picture"] sticky enable
 
-#
-client.focused          #458588 #458588 #eddbb2 #2e9ef4   #458588
-client.focused_inactive #282828 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #3c3836 #3c3836 #a89984 #292d2e   #222222
-client.urgent           #cc241d #cc241d #ebdbb2 #cc241d   #cc241d
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-client.background       #ffffff
+# Startup goodies
+exec_always --no-startup-id transmission-qt
+exec_always --no-startup-id telegram-desktop
+exec_always --no-startup-id discord
+exec_always --no-startup-id xfce4-clipman
+exec_always --no-startup-id xmodmap .xmodmap
