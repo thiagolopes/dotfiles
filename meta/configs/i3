@@ -224,3 +224,4 @@ exec_always --no-startup-id telegram-desktop
 exec_always --no-startup-id discord
 exec_always --no-startup-id xfce4-clipman
 exec_always --no-startup-id xmodmap .xmodmap
+exec_always --no-startup-id dunst
