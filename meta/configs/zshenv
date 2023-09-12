@@ -1,6 +1,6 @@
 export PATH=$HOME/.pyenv/bin:$HOME/bin:/usr/local/bin:$PATH:$HOME/.bin
 export ZSH=$HOME/.oh-my-zsh
-export EDITOR='emacs'
+export EDITOR="emacs"
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -16,9 +16,9 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 export GPG_TTY=$(tty)
 
-export WORK_FOLDER=${HOME}/dev
+export WORK=${HOME}/dev
+export NOTES=${HOME}/org
 export PROJECT_HOME=$WORK_FOLDER
-export WORKON_HOME=$HOME/.virtualenvs
 
 export HSTR_CONFIG=hicolor       # get more colors
 export HISTCONTROL=ignorespace   # leading space hides commands from history
@@ -30,4 +30,4 @@ export NU_HOME=${HOME}/dev/nu
 export NUCLI_HOME=${NU_HOME}/nucli
 export PATH=${NUCLI_HOME}:${PATH}
 
-
+export PATH="$PATH:$HOME/.config/emacs/bin"

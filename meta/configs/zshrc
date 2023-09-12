@@ -33,7 +33,7 @@ function nvm {
 if type pyenv > /dev/null; then
     pyenv() {
         unfunction $0
-	eval "$(pyenv init --path)"
+        eval "$(pyenv init --path)"
         eval "$(command pyenv init -)"
         eval "$(command pyenv virtualenv-init -)"
         pyenv virtualenvwrapper
@@ -103,4 +103,3 @@ if [ -x "$(command -v exa)" ]; then
     alias ls='exa -l'
 fi
 
-source "~/.nurc" 2>/dev/null
