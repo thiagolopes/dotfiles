@@ -14,7 +14,7 @@ plugins=(
     zsh-syntax-highlighting
 )
 ZSH_THEME="fishy"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 
 setopt histignorespace
 bindkey -s "\C-r" "\C-a hstr -- \C-j"
@@ -70,16 +70,20 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ~='cd ~'
 alias thumb_all='feh --montage --thumb-height 150 --thumb-width 150 --index-info "%wx%h" --output .'
-alias hh=hstr
 
-alias python-setup='pip install pyright isort pytest-icdiff pytest-tldr ipdb --upgrade '
+# HSTR
+if [ -x "$(command -v hstr)" ]; then
+    alias hh=hstr
+    setopt histignorespace           # skip cmds w/ leading space from history
+    export HSTR_CONFIG=hicolor       # get more colors
+    bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
+    export HSTR_TIOCSTI=y
+else
+    echo "\e[1;33;1;43mPlease install hstr to keep your sanity\e[0m"
+fi
 
 # Rust
 [ -s $HOME/.cargo ] && source $HOME/.cargo/bin/
-
-if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
-    alias colorpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:- | tail -n 1 | cut -d " " -f 4 | wl-copy'
-fi
 
 # When in Darwin
 if [[ $(uname -s) == "Darwin" ]]; then
@@ -99,7 +103,9 @@ if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 
     exit
 fi
 
+
 if [ -x "$(command -v exa)" ]; then
     alias ls='exa -l'
+else
+    echo "\e[1;33;1;43mPlease install exa to keep your sanity\e[0m"
 fi
-
