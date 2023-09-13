@@ -217,14 +217,21 @@ for_window [title="Spectacle"] floating enable, resize set 900 600
 for_window [title="Picture-in-Picture"] sticky enable
 
 # Startup goodies
-exec_always --no-startup-id transmission-qt --minimized
-exec_always --no-startup-id telegram-desktop
-exec_always --no-startup-id discord
-exec_always --no-startup-id xfce4-clipman
+exec --no-startup-id transmission-qt
+exec --no-startup-id telegram-desktop
+exec --no-startup-id discord
+exec --no-startup-id xfce4-clipman
 exec_always --no-startup-id dunst
 exec_always --no-startup-id xautolock
 exec_always --no-startup-id xautolock -disable
-exec_always --no-startup-id gxkb &
+exec --no-startup-id gxkb
+exec_always --no-startup-id snixembed
+exec_always --no-startup-id udiskie
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id keynav
+exec_always --no-startup-id dbus-run-session i3
+exec_always --no-startup-id lxpolkit
+exec_always --no-startup-id pasystray
 
 # Start my goodies
 exec_always --no-startup-id set-keyboard
