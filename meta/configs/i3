@@ -42,6 +42,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Use brightnessctl to control laptop brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -57,6 +61,9 @@ for_window [class="^floating_term$"] floating enable
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# Disable mouse focus
+focus_follows_mouse no
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
@@ -231,7 +238,7 @@ exec_always --no-startup-id nm-applet
 exec_always --no-startup-id keynav
 exec_always --no-startup-id lxpolkit
 exec pasystray
-exec_always --no-startup-id dbus-launch
+exec --no-startup-id dbus-run-session i3
 
 # Start my goodies
 exec_always --no-startup-id set-keyboard
