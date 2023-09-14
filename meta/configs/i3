@@ -204,6 +204,9 @@ bar {
         separator_symbol ⁞
 }
 
+# Alternative alt tab
+bindsym $alt+Tab exec --no-startup-id i3-alt-tab
+
 # GAPS
 gaps inner 4
 smart_gaps on
