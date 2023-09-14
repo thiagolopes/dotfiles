@@ -208,9 +208,6 @@ bar {
 gaps inner 4
 smart_gaps on
 
-# Wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.wallpaper
-
 # Telegram toggle
 for_window [title="Telegram"] floating enable,
 for_window [title="Telegram"] resize set 900 800
@@ -237,8 +234,10 @@ exec_always --no-startup-id udiskie
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id keynav
 exec_always --no-startup-id lxpolkit
-exec pasystray
+exec --no-startup-id pasystray
 exec --no-startup-id dbus-run-session i3
+exec --no-startup-id compton -CfGD3
+exec nitrogen --restore
 
 # Start my goodies
 exec_always --no-startup-id set-keyboard
