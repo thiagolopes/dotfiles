@@ -7,10 +7,23 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - ["if cd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions; then git pull; else git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions; fi", "Install/Update zsh-autosuggestions"]
-  - ["if cd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search; then git pull; else git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search; fi", "Install/Update zsh-history-substring-search"]
-  - ["if cd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting; then git pull; else git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting; fi", "Install/Update zsh-syntax-highlighting"]
-  - ["if cd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions; then git pull; else git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions; fi", "Install/Update zsh-completions"]
+
+- git:
+    '~/.oh-my-zsh/custom/plugins/zsh-autosuggestions':
+      url: 'https://github.com/zsh-users/zsh-autosuggestions'
+      description: 'oh my zsh - autosuggestions'
+
+    '~/.oh-my-zsh/custom/plugins/zsh-history-substring-search':
+      url: 'https://github.com/zsh-users/zsh-history-substring-search'
+      description: 'oh my zsh - history substring search'
+
+    '~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting':
+      url: 'https://github.com/zsh-users/zsh-syntax-highlighting'
+      description: 'oh my zsh - syntax highlighting'
+
+    '~/.oh-my-zsh/custom/plugins/zsh-completions':
+      url: 'https://github.com/zsh-users/zsh-completions'
+      description: 'oh my zsh - completions'
 
 - link:
     ~/.keynavrc: meta/configs/keynavrc
