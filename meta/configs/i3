@@ -238,7 +238,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id keynav
 exec --no-startup-id lxpolkit
 exec --no-startup-id pasystray
-exec --no-startup-id compton -CfGD3
+exec --no-startup-id compton -CfGD3 --vsync opengl
 exec nitrogen --restore
 exec package-update-indicator
 exec kglobalaccel5
