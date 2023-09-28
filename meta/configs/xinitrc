@@ -1,4 +1,4 @@
 setxkbmap -model abnt2 -layout br -variant abnt2
 setxkbmap -option ctrl:nocaps
 xset r rate 300 50
-exec dbus-launch --sh-syntax --exit-with-session i3
+# exec dbus-launch --sh-syntax --exit-with-session i3
