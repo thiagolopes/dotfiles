@@ -219,11 +219,6 @@ bindsym $alt+Tab exec --no-startup-id i3-alt-tab
 gaps inner 4
 smart_gaps on
 
-# Telegram toggle
-for_window [title="Telegram"] floating enable,
-for_window [title="Telegram"] resize set 900 800
-for_window [title="Telegram"] move scratchpad
-bindsym $mod+t [title="Telegram"] scratchpad show; [title="Telegram"] move position center
 # Pavucontrol
 for_window [instance="pavucontrol"] floating enable, resize set 900 600
 for_window [title="Spectacle"] floating enable, resize set 900 600
