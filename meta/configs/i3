@@ -213,7 +213,8 @@ bar {
 }
 
 # Alternative alt tab
-bindsym $alt+Tab exec --no-startup-id i3-alt-tab
+# bindsym $alt+Tab exec --no-startup-id i3-alt-tab
+bindsym $alt+Tab workspace back_and_forth
 
 # GAPS
 gaps inner 4
