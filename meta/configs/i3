@@ -263,3 +263,19 @@ client.focused          #334A5D #334A5D #ffffff #2e9ef4
 client.focused_inactive #5f676a #5f676a #ffffff #484e50
 client.unfocused        #222222 #222222 #888888 #292d2e
 client.urgent           #ffff00 #ffff00 #000000 #ffff00
+
+
+set $mode_launcher Run: [e]macs [f]irefox [d]olphin [z]eal
+bindsym $mod+o mode "$mode_launcher"
+mode "$mode_launcher" {
+    bindsym e exec emacs
+    bindsym f exec firefox
+    bindsym d exec dolphin
+    bindsym z exec zeal
+
+    bindsym Escape mode "default"
+    bindsym $mod+o mode "default"  
+    bindsym Return mode "default"
+}
+
+hide_edge_borders vertical
