@@ -218,7 +218,8 @@ bindsym $alt+Tab workspace back_and_forth
 
 # GAPS
 gaps inner 4
-smart_gaps on
+gaps outer 4
+smart_gaps off
 
 # Enable Icons bar
 for_window [all] title_window_icon yes
