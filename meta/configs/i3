@@ -217,8 +217,8 @@ bar {
 bindsym $alt+Tab workspace back_and_forth
 
 # GAPS
-gaps inner 4
-gaps outer 4
+gaps inner 08
+gaps outer 02
 smart_gaps off
 
 # Enable Icons bar
