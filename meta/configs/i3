@@ -202,14 +202,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         separator_symbol ⁞
-        colors {
-            background          #1F2326
-            statusline          #aaaaaa
-            focused_workspace   #334A5D     #334A5D     #ffffff
-            inactive_workspace  #222222     #222222     #888888
-            urgent_workspace    #2f343a     #ffff00     #000000
-            #colorclass         <border>    <background> <text>
-       }
 }
 
 # Alternative alt tab
@@ -256,14 +248,6 @@ exec --no-startup-id kwalletd5
 # Start my goodies
 exec_always --no-startup-id set-keyboard
 exec_always --no-startup-id natural-scroll
-
-# Theme!
-# class                 border  backgr. text    indicator
-client.focused          #334A5D #334A5D #ffffff #2e9ef4
-client.focused_inactive #5f676a #5f676a #ffffff #484e50
-client.unfocused        #222222 #222222 #888888 #292d2e
-client.urgent           #ffff00 #ffff00 #000000 #ffff00
-
 
 set $mode_launcher Run: [e]macs [f]irefox [d]olphin [z]eal
 bindsym $mod+o mode "$mode_launcher"
