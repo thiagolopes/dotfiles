@@ -24,14 +24,13 @@ from subprocess import check_output
 import i3ipc
 
 
-def get_windows_on_ws(conn):
+def windows_on_ws(conn):
     return filter(lambda x: x.window, conn.get_tree().find_focused().workspace().descendants())
 
 
-def find_visible_windows(windows_on_workspace):
+def filter_visible_windows(windows_on_workspace):
     visible_windows = []
     for w in windows_on_workspace:
-
         try:
             xprop = check_output(['xprop', '-id', str(w.window)]).decode()
         except FileNotFoundError:
@@ -44,10 +43,9 @@ def find_visible_windows(windows_on_workspace):
 
 
 if __name__ == '__main__':
-
     conn = i3ipc.Connection()
-
-    visible_windows = find_visible_windows(get_windows_on_ws(conn))
+    # visible_windows = filter_visible_windows(windows_on_ws(conn))
+    visible_windows = windows_on_ws(conn)
 
     if len(argv) > 1 and argv[1] == "reverse":
         cycle_windows = cycle(reversed(visible_windows))
