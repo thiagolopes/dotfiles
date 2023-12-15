@@ -57,7 +57,6 @@ function doc {
 # Alias
 alias emacs='emacs -nw'
 alias remove_duplicate_lines='awk '"'"'!visited[$0]++'"'"''
-alias ls='ls -Fh --color=auto --group-directories-first'
 
 if ! type docker &> /dev/null; then
     alias docker=podman
@@ -107,7 +106,7 @@ fi
 
 
 if [ -x "$(command -v exa)" ]; then
-    alias ls='exa -l'
+    alias ls='exa'
 else
     echo "\e[1;33;1;43mPlease install exa to keep your sanity\e[0m"
 fi
