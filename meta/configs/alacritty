@@ -1,21 +1,18 @@
-import:
- - ~/.config/alacritty/themes/themes/campbell.yaml
-
 font:
   normal:
-    family: JetBrains Mono
+    family: Consolas
     style: Regular
 
   bold:
-    family: JetBrains Mono
+    family: Consolas
     style: Bold
 
   italic:
-    family: JetBrains Mono
+    family: Consolas
     style: Italic
 
   bold_italic:
-    family: JetBrains Mono
+    family: Consolas
     style: Bold Italic
 
-  size: 8
+  size: 10
