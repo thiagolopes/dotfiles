@@ -254,7 +254,6 @@ exec --no-startup-id kwalletd5
 
 # Start my goodies
 exec_always --no-startup-id set-keyboard
-exec_always --no-startup-id natural-scroll
 
 set $mode_launcher Run: [e]macs [f]irefox [d]olphin [z]eal
 bindsym $mod+o mode "$mode_launcher"

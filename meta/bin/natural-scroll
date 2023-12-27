@@ -1,7 +1,31 @@
 #!/usr/bin/env bash
-# TODO FIXME
-id=`xinput list | grep -i "MX Vertical" | cut -d'=' -f2 | cut -d'[' -f1 | cut -d $'\n' -f1`
-natural_scrolling_id=`xinput list-props ${id} | \
-                      grep -i "Natural Scrolling Enabled (" \
-                      | cut -d'(' -f2 | cut -d')' -f1`
-xinput set-prop $id ${natural_scrolling_id} 1
+
+# # TODO FIXME
+# id=`xinput list | grep -i "MX Vertical" | cut -d'=' -f2 | cut -d'[' -f1 | cut -d $'\n' -f1`
+# natural_scrolling_id=`xinput list-props ${id} | \
+#                       grep -i "Natural Scrolling Enabled (" \
+#                       | cut -d'(' -f2 | cut -d')' -f1`
+# xinput set-prop $id ${natural_scrolling_id} 1
+
+xorg_conf="/etc/X11/xorg.conf.d/40-libinput.conf"
+template='
+Section "InputClass"
+    Identifier "libinput pointer catchall"
+    MatchIsPointer "on"
+    MatchDevicePath "/dev/input/event*"
+    Driver "libinput"
+    Option "NaturalScrolling" "True"
+    Option "Tapping" "on"
+EndSection
+'
+
+if [ -f "$xorg_conf" ]; then
+    if grep -q "Option \"NaturalScrolling\" \"True\"" "$xorg_conf"; then
+        echo "The 'NaturalScrolling' option is already configured in the file."
+    else
+        echo 'Option "NaturalScrolling" "True" - not configured in the file'
+    fi
+else
+    echo "$template" | sudo tee "$xorg_conf" > /dev/null
+    echo "Created '$xorg_conf' file with the 'Natural Scrolling' configuration."
+fi
