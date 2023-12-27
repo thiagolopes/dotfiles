@@ -1,17 +1,12 @@
 #! /usr/bin/sh
-# Make this dynamic!
-# I can get this using:
-# thiago@voidao ~> setxkbmap -query | grep layout
-# layout:     us
-# thiago@voidao ~> setxkbmap -query | grep variant
-# variant:    intl
 
 set -e
 
-setxkbmap -layout us -variant intl;
-setxkbmap -option ctrl:nocaps;
+layout=$(setxkbmap -query | grep layout | awk '{print $2}')
+variant=$(setxkbmap -query | grep variant | awk '{print $2}')
 
-# setxkbmap -model abnt2 -layout br -variant abnt2;
-# setxkbmap -option ctrl:nocaps;
+echo "Keyboard ${layout}/${variant} init..."
+setxkbmap -layout "$layout" -variant "$variant"
+setxkbmap -option ctrl:nocaps
 
-xset r rate 300 50;
+xset r rate 300 50
