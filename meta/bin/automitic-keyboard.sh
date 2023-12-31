@@ -13,4 +13,4 @@ echo "Keyboard set rate...."
 xset r rate 300 50
 
 echo "Configure g610....."
-sudo g610-led -a ff
+g610-led -a ff
