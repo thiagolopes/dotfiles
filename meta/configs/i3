@@ -222,10 +222,10 @@ for_window [all] title_window_icon padding 4
 for_window [instance="pavucontrol"] floating enable, resize set 900 600
 for_window [title="Spectacle"] floating enable, resize set 900 600
 
-# nitrogen
+# Nitrogen
 for_window [class="Nitrogen"] floating enable, resize set 900 600
 
-# audacius
+# Audacius
 for_window [class="Audacious"] floating enable, resize set 900 600
 
 # Picture in picture
@@ -253,7 +253,8 @@ exec_always xrdb ~/.Xresources
 exec --no-startup-id kwalletd5
 
 # Start my goodies
-exec_always --no-startup-id set-keyboard
+exec_always --no-startup-id setup-home-keyboard
+exec_always --no-startup-id natural-scroll
 
 set $mode_launcher Run: [e]macs [f]irefox [d]olphin [z]eal
 bindsym $mod+o mode "$mode_launcher"

@@ -3,3 +3,4 @@ set -e
 setxkbmap -layout us -variant intl;
 setxkbmap -option ctrl:nocaps;
 xset r rate 300 50;
+g610-led -a ff;
