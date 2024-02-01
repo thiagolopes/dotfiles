@@ -26,16 +26,17 @@
       description: 'oh my zsh - completions'
 
 - link:
-    ~/.keynavrc: meta/configs/keynavrc
-    ~/.gitconfig: meta/configs/gitconfig
-    ~/.xinitrc: meta/configs/xinitrc
-    ~/.zshrc: meta/configs/zshrc
-    ~/.zshenv: meta/configs/zshenv
-    ~/.xmodmap: meta/configs/xmodmap
-    ~/.config/i3/config: meta/configs/i3
-    ~/.config/i3/i3status-rs.toml: meta/configs/i3status-rs
-    ~/.config/ranger/rc.conf: meta/configs/ranger.rc
-    ~/.pdbrc: meta/configs/pdbrc
-    ~/.bin: meta/bin
+    ~/.keynavrc: ./meta/configs/keynavrc
+    ~/.gitconfig: ./meta/configs/gitconfig
+    ~/.xinitrc: ./meta/configs/xinitrc
+    ~/.zshrc: ./meta/configs/zshrc
+    ~/.zshenv: ./meta/configs/zshenv
+    ~/.xmodmap: ./meta/configs/xmodmap
+    ~/.config/i3/config: ./meta/configs/i3
+    ~/.config/i3/i3status-rs.toml: ./meta/configs/i3status-rs
+    ~/.config/ranger/rc.conf: ./meta/configs/ranger.rc
+    ~/.pdbrc: ./meta/configs/pdbrc
+    ~/.bin: ./meta/bin
     ~/.profile.icm: ./meta/configs/rtings-icc-profile.icm
     ~/.config/alacritty/alacritty.yml: ./meta/configs/alacritty
+    ~/.config/polybar/config: ./meta/configs/polybar
