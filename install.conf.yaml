@@ -38,5 +38,5 @@
     ~/.pdbrc: ./meta/configs/pdbrc
     ~/.bin: ./meta/bin
     ~/.profile.icm: ./meta/configs/rtings-icc-profile.icm
-    ~/.config/alacritty/alacritty.yml: ./meta/configs/alacritty
+    ~/.config/alacritty/alacritty.toml: ./meta/configs/alacritty
     ~/.config/polybar/config: ./meta/configs/polybar

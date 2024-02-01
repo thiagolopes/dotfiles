@@ -1,18 +1,18 @@
-font:
-  normal:
-    family: Cascadia Mono
-    style: Regular
+[font]
+size = 10
 
-  bold:
-    family: Cascadia Mono
-    style: Bold
+[font.bold]
+family = "Iosevka Slab Extended"
+style = "Bold"
 
-  italic:
-    family: Cascadia Mono
-    style: Italic
+[font.bold_italic]
+family = "Iosevka Slab Extended"
+style = "Bold Italic"
 
-  bold_italic:
-    family: Cascadia Mono
-    style: Bold Italic
+[font.italic]
+family = "Iosevka Slab Extended"
+style = "Italic"
 
-  size: 10
+[font.normal]
+family = "Iosevka Slab Extended"
+style = "Regular"
