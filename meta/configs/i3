@@ -232,25 +232,25 @@ for_window [class="Audacious"] floating enable, resize set 900 600
 for_window [title="Picture-in-Picture"] sticky enable
 
 # Startup goodies
-exec --no-startup-id transmission-qt
-exec --no-startup-id telegram-desktop
-exec --no-startup-id discord
-exec --no-startup-id xfce4-clipman
+exec transmission-qt
+exec telegram-desktop
+exec discord
+exec xfce4-clipman
 exec --no-startup-id dunst
 exec --no-startup-id xautolock -disable
 exec --no-startup-id gxkb
 exec --no-startup-id snixembed
 exec --no-startup-id udiskie
-exec --no-startup- nm-applet
+exec --no-startup-id nm-applet
 exec --no-startup-id keynav
 exec --no-startup-id lxpolkit
 exec --no-startup-id pasystray
-exec --no-startup-id compton -CfGD3 --vsync opengl
+exec --no-startup-id picom -CfGD3
 exec nitrogen --restore
 exec package-update-indicator
 exec kglobalaccel5
-exec_always xrdb ~/.Xresources
 exec --no-startup-id kwalletd5
+exec_always xrdb ~/.Xresources
 
 # Start my goodies
 exec_always --no-startup-id setup-home-keyboard
