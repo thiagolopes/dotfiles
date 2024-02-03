@@ -237,11 +237,11 @@ exec --no-startup-id telegram-desktop
 exec --no-startup-id discord
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id dunst
-exec_always --no-startup-id xautolock -disable
+exec --no-startup-id xautolock -disable
 exec --no-startup-id gxkb
 exec --no-startup-id snixembed
-exec_always --no-startup-id udiskie
-exec --no-startup-id nm-applet
+exec --no-startup-id udiskie
+exec --no-startup- nm-applet
 exec --no-startup-id keynav
 exec --no-startup-id lxpolkit
 exec --no-startup-id pasystray
