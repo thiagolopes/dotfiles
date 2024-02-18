@@ -41,3 +41,4 @@
     ~/.config/alacritty/alacritty.toml: ./meta/configs/alacritty
     ~/.config/polybar/config: ./meta/configs/polybar
     ~/.config/i3status/config: ./meta/configs/i3status.conf
+    ~/.config/user-dirs.dirs: ./meta/configs/user-dirs.dirs
