@@ -80,7 +80,7 @@ if [ -x "$(command -v hstr)" ]; then
     bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
     export HSTR_TIOCSTI=y
 else
-    echo "\e[1;33;1;43mPlease install hstr to keep your sanity\e[0m"
+    echo "Please install hstr to keep your sanity"
 fi
 
 # Rust
@@ -108,5 +108,5 @@ fi
 if [ -x "$(command -v exa)" ]; then
     alias ls='exa'
 else
-    echo "\e[1;33;1;43mPlease install exa to keep your sanity\e[0m"
+    echo "Please install exa to keep your sanity"
 fi
