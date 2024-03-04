@@ -7,6 +7,10 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  -
+    command: "curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+    quiet: true
+    stdout: false
 
 - git:
     '~/.oh-my-zsh/custom/plugins/zsh-autosuggestions':
@@ -41,4 +45,6 @@
     ~/.config/alacritty/alacritty.toml: ./meta/configs/alacritty
     ~/.config/polybar/config: ./meta/configs/polybar
     ~/.config/i3status/config: ./meta/configs/i3status.conf
-    ~/.config/user-dirs.dirs: ./meta/configs/user-dirs.dirs
+    ~/.config/user-dirs.dirs:
+      path: ./meta/configs/user-dirs.dirs
+      force: true
