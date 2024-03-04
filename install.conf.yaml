@@ -4,6 +4,7 @@
     link:
       create: true
       relink: true
+      force:  true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
@@ -30,21 +31,23 @@
       description: 'oh my zsh - completions'
 
 - link:
+    # X only
     ~/.keynavrc:                        ./meta/configs/keynavrc
-    ~/.gitconfig:                       ./meta/configs/gitconfig
     ~/.xinitrc:                         ./meta/configs/xinitrc
-    ~/.zshrc:                           ./meta/configs/zshrc
-    ~/.zshenv:                          ./meta/configs/zshenv
     ~/.xmodmap:                         ./meta/configs/xmodmap
+    ~/.config/polybar/config:           ./meta/configs/polybar
+
+    # i3wm
     ~/.config/i3/config:                ./meta/configs/i3
     ~/.config/i3/i3status-rs.toml:      ./meta/configs/i3status-rs
-    ~/.config/ranger/rc.conf:           ./meta/configs/ranger.rc
-    ~/.pdbrc:                           ./meta/configs/pdbrc
-    ~/.bin:                             ./meta/bin
-    ~/.profile.icm:                     ./meta/configs/rtings-icc-profile.icm
-    ~/.config/alacritty/alacritty.toml: ./meta/configs/alacritty
-    ~/.config/polybar/config:           ./meta/configs/polybar
     ~/.config/i3status/config:          ./meta/configs/i3status.conf
-    ~/.config/user-dirs.dirs:
-      path:                             ./meta/configs/user-dirs.dirs
-      force: true
+
+    ~/.bin:                             ./meta/bin
+    ~/.gitconfig:                       ./meta/configs/gitconfig
+    ~/.pdbrc:                           ./meta/configs/pdbrc
+    ~/.zshrc:                           ./meta/configs/zshrc
+    ~/.zshenv:                          ./meta/configs/zshenv
+    ~/.profile.icm:                     ./meta/configs/rtings-icc-profile.icm
+    ~/.config/ranger/rc.conf:           ./meta/configs/ranger.rc
+    ~/.config/alacritty/alacritty.toml: ./meta/configs/alacritty
+    ~/.config/user-dirs.dirs:           ./meta/configs/user-dirs.dirs
