@@ -43,6 +43,7 @@
     ~/.config/i3status/config:          ./meta/configs/i3status.conf
 
     ~/.bin:                             ./meta/bin
+    ~/.fonts:                           ./meta/fonts
     ~/.gitconfig:                       ./meta/configs/gitconfig
     ~/.pdbrc:                           ./meta/configs/pdbrc
     ~/.zshrc:                           ./meta/configs/zshrc
