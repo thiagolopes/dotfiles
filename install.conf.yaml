@@ -52,3 +52,4 @@
     ~/.config/ranger/rc.conf:           ./meta/configs/ranger.rc
     ~/.config/alacritty/alacritty.toml: ./meta/configs/alacritty
     ~/.config/user-dirs.dirs:           ./meta/configs/user-dirs.dirs
+    ~/.gitignore:                       ./meta/configs/gitignore

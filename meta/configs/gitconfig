@@ -1,23 +1,24 @@
 [user]
-	email = thiagolopes@protonmail.com
-	name = thiagolopes
-	signingkey = 79C5C3765739B33D
+    email = thiagolopes@protonmail.com
+    name = thiagolopes
+    signingkey = 79C5C3765739B33D
 [core]
-	editor = emacs
+    editor = emacs
+     excludesfile = ~/.gitignore
 [alias]
-	movie = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	update-main = !git checkout main && git pull origin main && git checkout -
+    movie = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    update-main = !git checkout main && git pull origin main && git checkout -
 [pull]
-	rebase = true
+    rebase = true
 [diff]
-	colorMoved = default
+    colorMoved = default
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	defaultBranch = main
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    defaultBranch = main
 [commit]
-	gpgsign = true
+    gpgsign = true
