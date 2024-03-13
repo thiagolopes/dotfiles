@@ -8,8 +8,9 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  -
-    command: "curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+
+- shell:
+  - command: "curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
     quiet: true
     stdout: false
 
@@ -29,6 +30,17 @@
     '~/.oh-my-zsh/custom/plugins/zsh-completions':
       url: 'https://github.com/zsh-users/zsh-completions'
       description: 'oh my zsh - completions'
+
+- create:
+    - ~/opt
+    - ~/tmp
+    - ~/etc
+    - ~/share
+    - ~/doc
+    - ~/media/music
+    - ~/media/image
+    - ~/media/video
+    - ~/dev
 
 - link:
     # X only
