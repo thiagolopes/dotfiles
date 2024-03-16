@@ -21,6 +21,8 @@ backup(){
     echo "Backup to $BACKUP ..."
     mkdir -p "$BACKUP/rsync/backup-home"
     rsync -a -h -c -b -v --progress \
+          --include='.ssh'\
+          --include='.local/share/gnome-shell'\
           --exclude='.[!.]*'\
           --exclude='Dropbox'\
           --exclude='Larian Studios'\
