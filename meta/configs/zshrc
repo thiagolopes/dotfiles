@@ -1,21 +1,27 @@
 plugins=(
-    docker
+    ag
+    command-not-found
     common-aliases
+    debian
+    docker
     emacs
+    fzf
     git
     git-extras
     github
     gnu-utils
     history-substring-search
     nvm
+    podman
     python
     sudo
     zsh-autosuggestions
     zsh-completions
+    zsh-history-substring-search
     zsh-syntax-highlighting
 )
 ZSH_THEME="fishy"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=4,bg=0,bold,underline"
 zstyle ':omz:plugins:nvm' lazy yes
 
 setopt histignorespace
@@ -84,7 +90,7 @@ else
 fi
 
 # Rust
-[ -s $HOME/.cargo ] && source $HOME/.cargo/bin/
+[ -s $HOME/.cargo ] && source "$HOME/.cargo/env"
 
 # When in Darwin
 if [[ $(uname -s) == "Darwin" ]]; then
