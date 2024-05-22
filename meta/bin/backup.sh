@@ -21,31 +21,32 @@ backup(){
     echo "Backup to $BACKUP ..."
     mkdir -p "$BACKUP/rsync/backup-home"
     rsync -a -h -c -b -v --progress \
-          --include='.ssh'\
-          --include='.local/share/gnome-shell'\
-          --exclude='.[!.]*'\
-          --exclude='Dropbox'\
-          --exclude='Larian Studios'\
-          --exclude='vm'\
-          --exclude='tmp'\
-          --exclude='dev'\
-          --exclude='*ROMS*'\
-          "$HOME/"\
-          "$BACKUP/rsync/backup-home/"
+	  --max-size='2G'\
+	  --include='.ssh'\
+	  --include='.local/share/gnome-shell'\
+	  --exclude='.[!.]*'\
+	  --exclude='Dropbox'\
+	  --exclude='Larian Studios'\
+	  --exclude='vm'\
+	  --exclude='tmp'\
+	  --exclude='dev'\
+	  --exclude='*ROMS*'\
+	  "$HOME/"\
+	  "$BACKUP/rsync/backup-home/"
 }
 
 restore(){
     echo "Restore to home/$USER ..."
     rsync -a -h -c -b -v --progress \
-          "$BACKUP/rsync/backup-home/"\
-          "$HOME/"
+	  "$BACKUP/rsync/backup-home/"\
+	  "$HOME/"
 }
 
 while getopts b:r:h: flag
 do
     case "${flag}" in
-        b) BACKUP=${OPTARG}; backup;;
-        r) BACKUP=${OPTARG}; restore;;
+	b) BACKUP=${OPTARG}; backup;;
+	r) BACKUP=${OPTARG}; restore;;
     esac
 done
 exit
