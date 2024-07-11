@@ -65,3 +65,4 @@
     ~/.config/alacritty/alacritty.toml: ./meta/configs/alacritty
     ~/.config/user-dirs.dirs:           ./meta/configs/user-dirs.dirs
     ~/.gitignore:                       ./meta/configs/gitignore
+    ~/.config/kitty/kitty.conf:         ./meta/configs/kitty
