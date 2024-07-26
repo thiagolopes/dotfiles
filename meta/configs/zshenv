@@ -34,3 +34,6 @@ export PATH="$PATH:$HOME/.config/emacs/bin"
 
 # To fix the error to open firefox links
 export MOZ_DBUS_REMOTE=1
+
+# pgcli
+PGSERVICEFILE=$HOME/.pg_service.conf
