@@ -1,5 +1,4 @@
 plugins=(
-    ag
     command-not-found
     common-aliases
     debian
