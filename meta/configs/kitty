@@ -1,7 +1,7 @@
 # border
 linux_display_server x11
 
-font_family iosevka
+font_family iosevka comfy
 font_size 14.0
 
 # solarized
