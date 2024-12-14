@@ -41,6 +41,8 @@ if type pyenv > /dev/null; then
         eval "$(pyenv init --path)"
         eval "$(command pyenv init -)"
         eval "$(command pyenv virtualenv-init -)"
+        [ -s $HOME/.pyenv/versions/default ] || pyenv virtualenv default
+        pyenv activate default
         pyenv virtualenvwrapper
         $0 "$@"
     }
