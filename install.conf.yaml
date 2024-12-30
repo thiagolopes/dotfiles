@@ -47,7 +47,6 @@
     ~/.keynavrc:                        ./meta/configs/keynavrc
     ~/.xinitrc:                         ./meta/configs/xinitrc
     ~/.xmodmap:                         ./meta/configs/xmodmap
-    ~/.config/polybar/config:           ./meta/configs/polybar
 
     # i3wm
     ~/.config/i3/config:                ./meta/configs/i3
@@ -62,7 +61,7 @@
     ~/.zshenv:                          ./meta/configs/zshenv
     ~/.profile.icm:                     ./meta/configs/rtings-icc-profile.icm
     ~/.config/ranger/rc.conf:           ./meta/configs/ranger.rc
-    ~/.config/alacritty/alacritty.toml: ./meta/configs/alacritty
     ~/.config/user-dirs.dirs:           ./meta/configs/user-dirs.dirs
     ~/.gitignore:                       ./meta/configs/gitignore
     ~/.config/kitty/kitty.conf:         ./meta/configs/kitty
+    ~/.config/ghostty/config:           ./meta/configs/ghostty
