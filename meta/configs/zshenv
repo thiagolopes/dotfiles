@@ -26,11 +26,11 @@ export HISTFILESIZE=10000        # increase history file size (default is 500)
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 
-export NU_HOME=${HOME}/dev/nu
-export NUCLI_HOME=${NU_HOME}/nucli
-export PATH=${NUCLI_HOME}:${PATH}
+# export NU_HOME=${HOME}/dev/nu
+# export NUCLI_HOME=${NU_HOME}/nucli
+# export PATH=${NUCLI_HOME}:${PATH}
 
-export PATH="$PATH:$HOME/.config/emacs/bin"
+# export PATH="$PATH:$HOME/.config/emacs/bin"
 
 # To fix the error to open firefox links
 export MOZ_DBUS_REMOTE=1
