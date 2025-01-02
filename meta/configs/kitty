@@ -2,7 +2,7 @@
 linux_display_server x11
 
 # font_family iosevka comfy
-font_family Monaspace Neon
+font_family JetBrains Mono
 font_size 14.0
 
 # solarized
