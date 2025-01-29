@@ -24,6 +24,9 @@
 [init]
     defaultBranch = main
 
+[merge]
+    conflictStyle = diff3
+
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
