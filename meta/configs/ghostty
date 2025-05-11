@@ -1,6 +1,2 @@
 font-family = "Iosevka"
 font-size = 14
-
-gtk-titlebar = false
-window-save-state = always
-shell-integration = zsh
