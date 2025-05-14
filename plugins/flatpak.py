@@ -8,8 +8,8 @@ class Flatpak(Plugin):
 
     def configure_flathub(self):
         command = "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
-        self._log.debug("Flatpak: setup flathub: " + command)
-        subprocess.run(command.split(" "))
+        ret = subprocess.run(command.split(" "), capture_output=True)
+        self._log.info("Flathub configured")
 
     def can_handle(self, directive):
         return self._directive == directive
