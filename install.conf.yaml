@@ -72,3 +72,19 @@
     ~/.gitignore:                       ./meta/configs/gitignore
     ~/.config/kitty/kitty.conf:         ./meta/configs/kitty
     ~/.config/ghostty/config:           ./meta/configs/ghostty
+
+
+- flatpak:
+    flathub: true
+    packages:
+      com.jeffser.Alpaca
+      org.freedesktop.Bustle
+      com.github.tchx84.Flatseal
+      org.jellyfin.JellyfinServer
+      com.github.libresprite.LibreSprite
+      io.openrct2.OpenRCT2
+      com.orama_interactive.Pixelorama
+      com.github.marhkb.Pods
+      com.spotify.Client
+      io.github.flattool.Warehouse
+      com.github.xournalpp.xournalpp
