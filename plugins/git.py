@@ -36,7 +36,7 @@ class DotbotGit(dotbot.Plugin):
                             +'is not defined! (Will be ignored...)')
             if 'description' in repo_definition:
                 repo.description = repo_definition['description']
-            
+
             if not repo.load():
                 success = False
         return success
@@ -105,15 +105,12 @@ class DotbotGit(dotbot.Plugin):
 
             command = 'git clone --quiet '
             command += self.url + ' ' + self.path
-            
             return self._run_command(command)
 
         def _pull(self):
-            
             command = 'git --work-tree="' + self.path + '"'
             command += ' --git-dir="' + self.path + '/.git"'
             command += ' pull --quiet'
-            
             return self._run_command(command)
 
         def _checkout(self, source='branch'):
@@ -155,8 +152,8 @@ class DotbotGit(dotbot.Plugin):
         def _run_command(self, command):
             try:
                 subprocess.run(
-                        [command], 
-                        shell=True, 
+                        [command],
+                        shell=True,
                         check=True)
                 return True
             except subprocess.CalledProcessError:

@@ -9,10 +9,23 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
 
-- shell:
-  - command: if [ ! -d "${HOME}/.oh-my-zsh" ]; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; fi
-    quiet: true
-    stdout: false
+# example
+- if:
+    cond: 'python -V | grep -Eq "Python\s+3\."'
+    met:
+    - shell:
+      - echo Found Python 3.
+    unmet:
+    - shell:
+      - echo Python3 not found!
+
+- if:
+    cond: test ! -d "${HOME}/.oh-my-zsh"
+    met:
+      - shell:
+          - command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+            quiet: true
+            stdout: false
 
 - git:
     '~/.oh-my-zsh/custom/plugins/zsh-autosuggestions':
