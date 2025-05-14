@@ -1,13 +1,27 @@
 - clean: ['~']
 
+
 - defaults:
     link:
       create: true
       relink: true
       force:  true
 
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+
+
+- create:
+    - ~/opt
+    - ~/tmp
+    - ~/etc
+    - ~/share
+    - ~/doc
+    - ~/media/music
+    - ~/media/image
+    - ~/media/video
+    - ~/dev
 
 
 - if:
@@ -20,6 +34,7 @@
     unmet:
       - shell:
           - echo ./oh-my-zsh exists - skip install
+
 
 - git:
     '~/.oh-my-zsh/custom/plugins/zsh-autosuggestions':
@@ -38,16 +53,6 @@
       url: 'https://github.com/zsh-users/zsh-completions'
       description: 'oh my zsh - completions'
 
-- create:
-    - ~/opt
-    - ~/tmp
-    - ~/etc
-    - ~/share
-    - ~/doc
-    - ~/media/music
-    - ~/media/image
-    - ~/media/video
-    - ~/dev
 
 - link:
     # X only

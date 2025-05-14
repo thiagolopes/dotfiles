@@ -6,18 +6,15 @@ import subprocess
 class Flatpak(Plugin):
     _directive = "flatpak"
 
-    def configure_flathub(self):
-        command = "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
-        ret = subprocess.run(command.split(" "), capture_output=True)
-        self._log.info("Flathub configured")
-
     def can_handle(self, directive):
         return self._directive == directive
 
     def handle(self, directive, data):
         if self._directive != directive:
             raise ValueError("flatpak cannot handle")
+        return self._process(data)
 
+    def _process(self, data):
         if not which("flatpak"):
             self._log.error("Flatpak binary not available, skip operation...")
             return False
@@ -47,3 +44,8 @@ class Flatpak(Plugin):
         self._log.lowinfo(ret)
         self._log.info("Flatpak finished")
         return True
+
+    def configure_flathub(self):
+        command = "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+        ret = subprocess.run(command.split(" "), capture_output=True)
+        self._log.info("Flathub configured")
