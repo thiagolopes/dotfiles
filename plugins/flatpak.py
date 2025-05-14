@@ -39,8 +39,11 @@ class Flatpak(Plugin):
         return_process = subprocess.run(command.split(" "), capture_output=True)
         if return_process.returncode == 1:
             err = return_process.stderr.decode().split("\n")
-            err = "Flatpak: \n" + "\n".join([e for e in err if e.startswith("error:")])
+            err = "Flatpak:\n" + "\n".join([e for e in err if e.startswith("error:")])
             self._log.error(err)
             return False
 
+        ret = return_process.stderr.decode().rstrip().strip()
+        self._log.lowinfo(ret)
+        self._log.info("Flatpak finished")
         return True
