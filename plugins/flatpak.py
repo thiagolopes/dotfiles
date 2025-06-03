@@ -20,19 +20,24 @@ class Flatpak(Plugin):
         command = self._command.format(package=package)
         return_process = subprocess.run(command.split(" "), capture_output=True)
 
+        err = return_process.stderr.decode()
+
         if return_process.returncode == 1:
-            err = return_process.stderr.decode().split("\n")
-            err = "Flatpak:" + "\n".join([e for e in err if e.startswith("error:")])
-            self._log.error(err)
+            err = err.split("\n")
+            err_out = "Flatpak:" + "\n".join([e for e in err if e.startswith("error:")])
+            self._log.error(err_out)
             return False
 
-        ret = return_process.stderr.decode().rstrip().strip().replace("\n", " ")
-        self._log.lowinfo(ret)
+        ret = err.rstrip().strip().replace("\n", " ")
+        if not ret:
+            self._log.info(f"Installed: {package}")
+        else:
+            self._log.lowinfo(ret)
         return True
 
     def _process(self, data):
         if not which("flatpak"):
-            self._log.error("Flatpak binary not available, skip operation...")
+            self._log.error("Flatpak binary not found, skip this step...")
             return False
 
         if "flathub" in data and data["flathub"] is True:
