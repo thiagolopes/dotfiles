@@ -26,6 +26,7 @@ backup(){
           --include='.local/share/gnome-shell'\
           --exclude='.[!.]*'\
           --exclude='Dropbox'\
+          --exclude='mnt'\
           --exclude='Larian Studios'\
           --exclude='vm'\
           --exclude='tmp'\
