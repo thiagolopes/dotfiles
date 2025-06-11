@@ -53,6 +53,11 @@
       url: 'https://github.com/zsh-users/zsh-completions'
       description: 'oh my zsh - completions'
 
+    '~/.emacs.d/':
+      url: 'git@github.com:thiagolopes/emacs.d.git'
+      description: 'EMACS - my personal .el'
+
+
 
 - link:
     # X only
