@@ -1,8 +1,8 @@
 # border
 linux_display_server x11
 
-font_family iosevka
-font_size 16.0
+font_family family='Atkinson Hyperlegible Mono'
+font_size 14.0
 
 # solarized
 background #181818
