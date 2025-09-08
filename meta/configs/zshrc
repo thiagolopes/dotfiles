@@ -93,9 +93,6 @@ fi
 
 # When in Darwin
 if [[ $(uname -s) == "Darwin" ]]; then
-    source $HOME/.iterm2_shell_integration.zsh
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-    unalias ls
     unalias docker
     unalias docker-compose
 fi
