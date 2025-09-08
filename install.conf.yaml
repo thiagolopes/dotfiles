@@ -83,6 +83,12 @@
     ~/.config/kitty/kitty.conf:         ./meta/configs/kitty
     ~/.config/ghostty/config:           ./meta/configs/ghostty
 
+    # macos
+    ~/Library/Fonts/:
+      if: '[ `uname` = Darwin ]'
+      glob: true
+      path: ./meta/fonts/*
+
 
 - flatpak:
     flathub: true
