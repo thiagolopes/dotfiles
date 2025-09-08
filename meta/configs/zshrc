@@ -107,10 +107,10 @@ if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 
 fi
 
 
-if [ -x "$(command -v exa)" ]; then
-    alias ls='exa'
+if [ -x "$(command -v eza)" ]; then
+    alias ls='eza'
 else
-    echo "Please install exa to keep your sanity"
+    echo "Please install eza to keep your sanity"
 fi
 
 # ssh
