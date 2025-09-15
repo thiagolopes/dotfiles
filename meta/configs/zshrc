@@ -95,6 +95,12 @@ fi
 if [[ $(uname -s) == "Darwin" ]]; then
     unalias docker
     unalias docker-compose
+
+    # made cmd+f/b behave as expected
+    if [[ "$TERM" == "xterm-kitty" ]]; then
+        bindkey '2;9u' forward-word
+        bindkey '8;9u' backward-word
+    fi
 fi
 
 # start x as default
