@@ -62,6 +62,7 @@ function doc {
 # Alias
 alias emacs='emacs -nw'
 alias remove_duplicate_lines='awk '"'"'!visited[$0]++'"'"''
+alias neofetch='fastfetch'
 
 if ! type docker &> /dev/null; then
     alias docker=podman
