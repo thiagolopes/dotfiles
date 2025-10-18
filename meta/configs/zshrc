@@ -113,12 +113,7 @@ if [[ $(uname -s) == "Linux" ]] && [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 
     exit
 fi
 
-
-if [ -x "$(command -v eza)" ]; then
-    alias ls='eza'
-else
-    echo "Please install eza to keep your sanity"
-fi
+alias ls='ls --color=auto'
 
 # ssh
 if [[ $TERM == "xterm-kitty" ]]; then
@@ -139,4 +134,3 @@ hstr_no_tiocsti() {
 zle -N hstr_no_tiocsti
 bindkey '\C-r' hstr_no_tiocsti
 export HSTR_TIOCSTI=n
-
