@@ -1,3 +1,7 @@
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="fishy"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=4,bg=0,bold,underline"
+
 plugins=(
     command-not-found
     common-aliases
@@ -19,11 +23,8 @@ plugins=(
     zsh-history-substring-search
     zsh-syntax-highlighting
 )
-ZSH_THEME="fishy"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=4,bg=0,bold,underline"
-zstyle ':omz:plugins:nvm' lazy yes
-
 source $ZSH/oh-my-zsh.sh
+zstyle ':omz:plugins:nvm' lazy yes
 
 # NVM
 # function nvm { # lazy
@@ -77,6 +78,22 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ~='cd ~'
 alias thumb_all='feh --montage --thumb-height 150 --thumb-width 150 --index-info "%wx%h" --output .'
+
+# Helpers
+
+# mensure path/deep
+alias du3="ncdu"
+du2() {
+    local DIR="${1:-$HOME}"
+    local DEPTH="${2:-2}"
+
+    du -h \
+      --exclude=/proc \
+      --exclude=/run \
+      --exclude="$DIR/doc" \
+      -d "$DEPTH" "$DIR" | sort -h
+}
+
 
 # HSTR
 if [ -x "$(command -v hstr)" ]; then
