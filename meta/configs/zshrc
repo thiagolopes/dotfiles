@@ -36,15 +36,14 @@ zstyle ':omz:plugins:nvm' lazy yes
 # }
 
 # Lazyload Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 if type pyenv > /dev/null; then
     pyenv() {
         unfunction $0
-        eval "$(pyenv init --path)"
-        eval "$(command pyenv init -)"
-        eval "$(command pyenv virtualenv-init -)"
-        [ -s $HOME/.pyenv/versions/default ] || pyenv virtualenv default
-        pyenv activate default
-        pyenv virtualenvwrapper
+        eval "$(pyenv init - zsh)"
+        eval "$(pyenv virtualenv-init -)"
+        eval "$(pyenv virtualenvwrapper_lazy -)"
         $0 "$@"
     }
 fi
