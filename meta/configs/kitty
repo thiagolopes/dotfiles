@@ -1,8 +1,8 @@
 # border
 linux_display_server x11
 
-font_family family='Commit Mono'
-font_size 14.0
+font_family family='Iosevka'
+font_size 18.0
 
 enable_audio_bell no
 
