@@ -1,10 +1,10 @@
 [user]
     email = thiagolopes@protonmail.com
     name = thiagolopes
-    signingkey = 79C5C3765739B33D
+    # signingkey = 79C5C3765739B33D
 
-[commit]
-    gpgsign = true
+# [commit]
+    # gpgsign = true
 
 [core]
     editor = emacs
