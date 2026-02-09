@@ -1,6 +1,7 @@
 from shutil import which
 from dotbot import Plugin
 import subprocess
+from platform import platform
 
 
 class Flatpak(Plugin):
@@ -36,6 +37,10 @@ class Flatpak(Plugin):
         return True
 
     def _process(self, data):
+        if "Linux" not in platform():
+            self._log.warning("Flatpak: skipping, not on Linux...")
+            return True
+
         if not which("flatpak"):
             self._log.error("Flatpak binary not found, skip this step...")
             return False
