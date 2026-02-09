@@ -4,6 +4,3 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "pyenv-installer"]
-	path = pyenv-installer
-	url = https://github.com/pyenv/pyenv-installer
