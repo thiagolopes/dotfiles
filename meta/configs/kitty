@@ -5,3 +5,8 @@ font_family family='FiraCode Nerd Font'
 font_size 16.0
 
 enable_audio_bell no
+
+
+# BEGIN_KITTY_THEME
+include current-theme.conf
+# END_KITTY_THEME
