@@ -85,6 +85,8 @@
     ~/.config/kitty/kitty.conf:         ./meta/configs/kitty
     ~/.config/ghostty/config:           ./meta/configs/ghostty
 
+    ~/.config/sway/config:              ./meta/configs/sway
+
     # macos
     ~/Library/Fonts/:
       if: '[ `uname` = Darwin ]'
