@@ -14,6 +14,9 @@ set $down j
 set $up k
 set $right l
 
+# Font
+font pango:Hack Nerd Font Mono 11
+
 # Your preferred terminal emulator
 set $term kitty
 
@@ -30,11 +33,12 @@ output HDMI-A-2 resolution 2560x1440@144hz
 output HDMI-A-2 scale 1
 
 ### Idle configuration
-exec sway-audio-idle-inhibit
+# exec sway-audio-idle-inhibit
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f -c 080808' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f -c 080808'
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -72,7 +76,15 @@ bindsym $mod+Shift+Return exec --no-startup-id $term --class floating_term
 for_window [class="^floating_term$"] floating enable
 
 # Kill focused window
-bindsym $mod+Shift+q kill
+# bindsym $mod+Shift+q kill
+
+# Confim kill
+mode "kill?" {
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+     bindsym $mod+Shift+q kill; mode "default"
+}
+bindsym $mod+Shift+q mode "kill?"
 
 # Start your launcher
 bindsym $mod+d exec $menu
@@ -244,7 +256,13 @@ bindsym Shift+Print exec flameshot gui
 
 
 bar {
-    status_command    i3status
+    status_command bumblebee-status -m kernel cpu2 memory disk \
+        pasink pasource time \
+        -p time.format="%H:%M:%S" \
+        -p cpu2.layout="cpu2.maxfreq cpu2.cpuload cpu2.coresload" \
+        -p cpu2.colored=1
+
+    font pango:Hack Nerd Font Mono 10
     position          top
     workspace_buttons yes
     separator_symbol ⁞
