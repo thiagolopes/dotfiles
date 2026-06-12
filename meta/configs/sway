@@ -231,7 +231,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 # Special key to take a screenshot with grim
-bindsym Print exec grim
+bindsym Print exec grim -t png - | wl-copy -t image/pn
 bindsym Shift+Print exec flameshot gui
 
 
