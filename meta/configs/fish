@@ -1,0 +1,18 @@
+fish_default_key_bindings
+bind alt-backspace backward-kill-word
+bind ctrl-backspace backward-kill-token
+bind alt-delete kill-word
+bind ctrl-delete kill-token
+
+alias emacs 'emacs -nw'
+alias neofetch 'fastfetch'
+
+alias docker podman
+alias docker-compose podman-compose
+
+alias du2 "ncdu"
+
+alias feh_mosaic 'feh --montage --thumb-height 150 --thumb-width 150 --index-info "%wx%h" --output .'
+
+set -gx EDITOR "emacs"
+set -gx PATH $HOME/.deno/bin $HOME/.pyenv/bin $HOME/bin /usr/local/bin $HOME/.bin $PATH

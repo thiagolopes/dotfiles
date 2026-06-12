@@ -87,6 +87,7 @@
 
     ~/.config/sway/config:              ./meta/configs/sway
     ~/.config/foot/foot.ini:            ./meta/configs/foot
+    ~/.config/fish/config.fish:         ./meta/configs/fish
 
     # macos
     ~/Library/Fonts/:
