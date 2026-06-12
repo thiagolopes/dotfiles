@@ -86,6 +86,7 @@
     ~/.config/ghostty/config:           ./meta/configs/ghostty
 
     ~/.config/sway/config:              ./meta/configs/sway
+    ~/.config/foot/foot.ini:            ./meta/configs/foot
 
     # macos
     ~/Library/Fonts/:

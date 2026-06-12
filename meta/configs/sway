@@ -18,7 +18,7 @@ set $right l
 font pango:Hack Nerd Font Mono 11
 
 # Your preferred terminal emulator
-set $term kitty
+set $term foot -f Hack:size=12
 
 # Your preferred application launcher
 set $menu fuzzel -b 080808ff -t ffffffff -s010101ff -C0f0f0fff -p "RUN: "
@@ -49,6 +49,7 @@ input type:keyboard {
       xkb_layout us
       Xkb_variant intl
       xkb_options ctrl:nocaps
+      xkb_numlock enabled
 }
 
 input type:pointer {
@@ -60,7 +61,7 @@ input type:touchpad {
     natural_scroll enabled
 }
 
-seat seat0 xcursor_theme Adwaita
+seat seat0 xcursor_theme Adwaita 22
 
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
@@ -257,7 +258,7 @@ bindsym Shift+Print exec flameshot gui
 
 bar {
     status_command bumblebee-status -m kernel cpu2 memory disk \
-        pasink pasource time \
+        pasink pasource date time \
         -p time.format="%H:%M:%S" \
         -p cpu2.layout="cpu2.maxfreq cpu2.cpuload cpu2.coresload" \
         -p cpu2.colored=1
