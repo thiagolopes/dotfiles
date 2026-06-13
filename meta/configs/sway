@@ -7,6 +7,7 @@
 ### Variables
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+set $alt Mod1
 
 # Home row direction keys, like vim
 set $left h
@@ -14,11 +15,15 @@ set $down j
 set $up k
 set $right l
 
+# Theme
+set $blue '#285577'
+
 # Font
-font pango:Hack Nerd Font Mono 11
+set $font Inconsolata
+font pango:$font 11
 
 # Your preferred terminal emulator
-set $term foot -f Hack:size=12
+set $term foot -f $font:size=16
 
 # Your preferred application launcher
 set $menu fuzzel -b 080808ff -t ffffffff -s010101ff -C0f0f0fff -p "RUN: "
@@ -83,9 +88,11 @@ for_window [class="^floating_term$"] floating enable
 mode "kill?" {
      bindsym Return mode "default"
      bindsym Escape mode "default"
+     bindsym ctrl+g mode "default"
      bindsym $mod+Shift+q kill; mode "default"
 }
 bindsym $mod+Shift+q mode "kill?"
+bindsym $alt+F4 kill;
 
 # Start your launcher
 bindsym $mod+d exec $menu
@@ -129,17 +136,30 @@ bindsym $mod+Shift+Right move right
 #
 # Workspaces:
 #
-# Switch to workspace
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
+# Switch to workspace + SOV
+exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 500
+bindsym --no-repeat $mod+1 workspace number 1; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+2 workspace number 2; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+3 workspace number 3; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+4 workspace number 4; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+5 workspace number 5; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+6 workspace number 6; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+7 workspace number 7; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+8 workspace number 8; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+9 workspace number 9; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+0 workspace number 10; exec "echo 1 > /tmp/sovpipe"
+
+bindsym --release $mod+1 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+2 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+3 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+4 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+5 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+6 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+7 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+8 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+9 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+0 exec "echo 0 > /tmp/sovpipe"
+
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
@@ -232,8 +252,9 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 # Special key to take a screenshot with grim
 bindsym Print exec grim -t png - | wl-copy -t image/pn
+exec flameshot config -m $blue
 bindsym Shift+Print exec flameshot gui
-
+bindsym $mod+Shift+Print exec flameshot gui
 
 #
 # Status Bar:
@@ -257,13 +278,14 @@ bindsym Shift+Print exec flameshot gui
 
 
 bar {
-    status_command bumblebee-status -m kernel cpu2 memory disk \
+    status_command bumblebee-status -m uptime kernel cpu2 memory disk \
         pasink pasource date time \
         -p time.format="%H:%M:%S" \
         -p cpu2.layout="cpu2.maxfreq cpu2.cpuload cpu2.coresload" \
         -p cpu2.colored=1
 
-    font pango:Hack Nerd Font Mono 10
+
+    font pango:$font 11
     position          top
     workspace_buttons yes
     separator_symbol ⁞
@@ -278,11 +300,36 @@ bar {
 exec swaync
 exec --no-startup-id udiskie
 exec --no-startup-id nm-applet
+exec copyq
+
+exec_always killall pipewire
+exec_always killall pipewire-pulse
+exec_always killall wireplumber
+exec_always killall xdg-desktop-portal-gtk
+exec_always killall xdg-desktop-portal-wlr
+exec_always pipewire
+# exec_always pipewire-pulse
+# exec_always wireplumber
+exec_always /usr/libexec/xdg-desktop-portal-gtk
+exec_always /usr/libexec/xdg-desktop-portal-wlr
+
+exec dbus-update-activation-environment DISPLAY
+exec gammastep-indicator -l $(curl -s http://ip-api.com/json | jq -r '"\(.lat):\(.lon)"')
 
 # Windows configs
+for_window [app_id="copyq"] floating enable, move position mouse, resize set 40x100
 for_window [app_id="galculator"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_role="dialog"] floating enable
 for_window [title="Telegram"] floating enable
 for_window [instance="pavucontrol"] floating enable, resize set 900 600
 for_window [title="Picture-in-Picture"] sticky enable
+
+#gaps
+gaps inner 6
+
+#swayfx
+corner_radius 8
+blur enable
+blur_xray disable
+shadows enable
