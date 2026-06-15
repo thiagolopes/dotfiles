@@ -20,10 +20,10 @@ set $blue '#285577'
 
 # Font
 set $font Inconsolata
-font pango:$font 11
+font pango:$font 12
 
 # Your preferred terminal emulator
-set $term foot -f $font:size=16
+set $term foot -f $font:size=14
 
 # Your preferred application launcher
 set $menu fuzzel -b 080808ff -t ffffffff -s010101ff -C0f0f0fff -p "RUN: "
@@ -190,6 +190,8 @@ bindsym $mod+e layout toggle split
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
 
+bindsym $mod+x layout toggle all
+
 # Toggle the current focus between tiling and floating mode
 bindsym $mod+Shift+space floating toggle
 
@@ -284,8 +286,7 @@ bar {
         -p cpu2.layout="cpu2.maxfreq cpu2.cpuload cpu2.coresload" \
         -p cpu2.colored=1
 
-
-    font pango:$font 11
+    font pango:$font  12
     position          top
     workspace_buttons yes
     separator_symbol ⁞
