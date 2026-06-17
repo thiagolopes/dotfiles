@@ -11,6 +11,7 @@ alias docker-compose podman-compose
 
 alias du2 ncdu
 
+alias gst 'git status'
 
 set -gx EDITOR "emacs"
 set -gx PATH $HOME/.deno/bin $HOME/.pyenv/bin $HOME/bin /usr/local/bin $HOME/.bin $PATH
