@@ -38,11 +38,11 @@ output HDMI-A-2 resolution 2560x1440@144hz
 output HDMI-A-2 scale 1
 
 ### Idle configuration
-# exec sway-audio-idle-inhibit
 exec swayidle -w \
          timeout 300 'swaylock -f -c 080808' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 080808'
+exec sway-audio-idle-inhibit
 
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -254,9 +254,8 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 # Special key to take a screenshot with grim
 bindsym Print exec grim -t png - | wl-copy -t image/pn
-exec flameshot config -m $blue
-bindsym Shift+Print exec flameshot gui
-bindsym $mod+Shift+Print exec flameshot gui
+bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
 #
 # Status Bar:
@@ -303,12 +302,7 @@ exec --no-startup-id udiskie
 exec --no-startup-id nm-applet
 exec copyq
 
-exec_always killall pipewire
-exec_always killall pipewire-pulse
-exec_always killall wireplumber
-exec_always killall xdg-desktop-portal-gtk
-exec_always killall xdg-desktop-portal-wlr
-exec_always pipewire
+exec_always killall pulseaudio
 # exec_always pipewire-pulse
 # exec_always wireplumber
 exec_always /usr/libexec/xdg-desktop-portal-gtk
