@@ -19,19 +19,20 @@ set $right l
 set $blue '#285577'
 
 # Font
-set $font Inconsolata
-font pango:$font 12
+set $font JetBrains Mono
+font pango:$font 10
 
 # Your preferred terminal emulator
-set $term foot -f $font:size=14
+set $term foot -f "$font":size=14
 
 # Your preferred application launcher
-set $menu fuzzel -b 080808ff -t ffffffff -s010101ff -C0f0f0fff -p "RUN: "
+# set $menu fuzzel -b 080808ff -t 285577ff -s010101ff -C285577ff
+set $menu i3-dmenu-desktop --dmenu='dmenu -i -fn "$font-12"'
 
 ### Output configuration
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg ~/.wallpaper.jpg fill
-exec_always swaybg -i ~/.wallpaper.png -c 550055 -m tile
+exec swaybg -i ~/.wallpaper.png -c 550055 -m tile
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output HDMI-A-2 resolution 2560x1440@144hz
@@ -285,7 +286,7 @@ bar {
         -p cpu2.layout="cpu2.maxfreq cpu2.cpuload cpu2.coresload" \
         -p cpu2.colored=1
 
-    font pango:$font  12
+    font pango:$font  10
     position          top
     workspace_buttons yes
     separator_symbol ⁞
@@ -324,7 +325,7 @@ for_window [title="Picture-in-Picture"] sticky enable
 gaps inner 6
 
 #swayfx
-corner_radius 8
+corner_radius 0
 blur enable
 blur_xray disable
 shadows enable
