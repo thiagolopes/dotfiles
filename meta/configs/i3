@@ -11,13 +11,11 @@
 
 set $mod Mod4
 set $alt Mod1
-set $terminal kitty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Iosevka Slab Extended 11
+# font pango:monospace 10
+font pango:DejaVu Sans Mono 9
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -29,7 +27,7 @@ exec --no-startup-id dex --autostart --environment i3
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-bindsym Control+$alt+l exec i3lock
+bindsym Control+$alt+l exec i3lock -c 111111 -f
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -54,6 +52,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
+set $terminal i3-sensible-terminal -f Hack-12
 bindsym $mod+Return exec $terminal
 # start a floating terminal
 bindsym $mod+Shift+Return exec --no-startup-id $terminal --class floating_term
@@ -63,23 +62,23 @@ for_window [class="^floating_term$"] floating enable
 bindsym $mod+Shift+q kill
 
 # Disable mouse focus
-focus_follows_mouse no
+# focus_follows_mouse no
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindcode $mod+40 exec "rofi -drun-use-desktop-cache -modi drun,run -show drun -theme dmenu -show-icons"
-bindcode $mod+Shift+40 exec "rofi -drun-reload-desktop-cache -modi drun,run -show drun -theme dmenu -show-icons"
+bindcode $mod+40 exec "rofi -drun-use-desktop-cache -show runq -theme dmenu -show-icons"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i'
+
 
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
-bindsym $mod+Ccedilla focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -92,7 +91,6 @@ bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
-bindsym $mod+Shift+Ccedilla move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -182,7 +180,6 @@ mode "resize" {
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
-        bindsym Ccdilla resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -201,56 +198,68 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        position top
         separator_symbol ⁞
+        Status_command bumblebee-status -m uptime kernel cpu2 memory disk \
+                       pasink pasource date time \
+                       -p time.format="%H:%M:%S" \
+                       -p cpu2.layout="cpu2.maxfreq cpu2.cpuload cpu2.coresload" \
+                       -p cpu2.colored=1
 }
 
+# Confim kill
+# mode "kill?" {
+#      bindsym Return mode "default"
+#      bindsym Escape mode "default"
+#      bindsym ctrl+g mode "default"
+#      bindsym $mod+Shift+q kill; mode "default"
+# }
+# bindsym $mod+Shift+q mode "kill?"
+bindsym $alt+F4 kill;
+
 # Alternative alt tab
-bindsym $alt+Tab exec --no-startup-id i3-alt-tab
+# bindsym $alt+Tab exec --no-startup-id i3-alt-tab
 # bindsym $alt+Tab workspace back_and_forth
 
 # GAPS
-gaps inner 08
-gaps outer 02
-smart_gaps off
+gaps inner 06
+# gaps outer 02
+# smart_gaps off
 
 # Enable Icons bar
 for_window [all] title_window_icon yes
 for_window [all] title_window_icon padding 4
 
-# Pavucontrol
+# Floating
+for_window [title="CopyQ"] floating enable, move position mouse, resize set 40x100
+for_window [id="galculator"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [title="Telegram"] floating enable
 for_window [instance="pavucontrol"] floating enable, resize set 900 600
 for_window [title="Spectacle"] floating enable, resize set 900 600
-
-# Nitrogen
 for_window [class="Nitrogen"] floating enable, resize set 900 600
-
-# Audacius
 for_window [class="Audacious"] floating enable, resize set 900 600
-
-# Picture in picture
 for_window [title="Picture-in-Picture"] sticky enable
 
 # Startup goodies
-exec transmission-qt
-exec telegram-desktop
-exec discord
-exec xfce4-clipman
+exec qbittorrent
+# exec telegram-desktop
+# exec discord
+# exec xfce4-clipman
+exec copyq
 exec --no-startup-id dunst
 exec --no-startup-id xautolock -disable
 exec --no-startup-id gxkb
 exec --no-startup-id snixembed
 exec --no-startup-id udiskie
-exec --no-startup-id nm-applet
 exec --no-startup-id keynav
 exec --no-startup-id lxpolkit
-exec --no-startup-id pasystray
-exec --no-startup-id picom -CfGD3
+# exec --no-startup-id pasystray
+exec --no-startup-id picom --backend glx
 exec --no-startup-id xiccd
 exec nitrogen --restore
-exec package-update-indicator
-exec kglobalaccel5
-exec --no-startup-id kwalletd5
+# exec --no-startup-id package-update-indicator
 exec_always xrdb ~/.Xresources
 
 # Start my goodies
@@ -266,7 +275,7 @@ mode "$mode_launcher" {
     bindsym z exec zeal
 
     bindsym Escape mode "default"
-    bindsym $mod+o mode "default"  
+    bindsym $mod+o mode "default"
     bindsym Return mode "default"
 }
 

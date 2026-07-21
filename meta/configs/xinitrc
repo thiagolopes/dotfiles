@@ -1,4 +1,37 @@
-setxkbmap -model abnt2 -layout br -variant abnt2
+# Disable DPMS turning off the screen
+xset -dpms
+xset s off
+
+# Disable bell
+xset -b
+
+# Enable zapping (C-A-<Bksp> kills X)
+setxkbmap -option terminate:ctrl_alt_bksp
+setxkbmap -layout us -variant intl;
+# setxkbmap -model abnt2 -layout br -variant abnt2
 setxkbmap -option ctrl:nocaps
-xset r rate 300 50
-# exec dbus-launch --sh-syntax --exit-with-session i3
+xset r rate 300 25
+
+# Enforce correct locales from the beginning:
+# LC_ALL is unset since it overwrites everything
+# LANG=de_DE.UTF-8 is used, except for:
+# LC_MESSAGES=C never translates program output
+# LC_TIME=en_DK leads to yyyy-mm-dd hh:mm date/time output
+# unset LC_ALL
+# export LANG=de_DE.UTF-8
+# export LC_MESSAGES=C
+# export LC_TIME=en_DK.UTF-8
+
+# Use XToolkit in java applications
+export AWT_TOOLKIT=XToolkit
+
+# Set background color
+xsetroot -solid "#333333"
+
+# Enable core dumps in case something goes wrong
+ulimit -c unlimited
+
+# Start i3 and log to ~/.local/share/i3/log
+mkdir -p ~/.local/share/i3
+echo "Starting at $(date)" >> ~/.local/share/i3/log
+exec dbus-launch --sh-syntax --exit-with-session /usr/bin/i3 -V -d all >> ~/.local/share/i3/log
