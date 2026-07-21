@@ -59,7 +59,7 @@ bindsym $mod+Shift+Return exec --no-startup-id $terminal --class floating_term
 for_window [class="^floating_term$"] floating enable
 
 # kill focused window
-bindsym $mod+Shift+q kill
+# bindsym $mod+Shift+q kill
 
 # Disable mouse focus
 # focus_follows_mouse no
@@ -67,7 +67,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindcode $mod+40 exec "rofi -drun-use-desktop-cache -show runq -theme dmenu -show-icons"
+bindcode $mod+40 exec "rofi -drun-use-desktop-cache -show run -theme dmenu -show-icons"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -208,13 +208,13 @@ bar {
 }
 
 # Confim kill
-# mode "kill?" {
-#      bindsym Return mode "default"
-#      bindsym Escape mode "default"
-#      bindsym ctrl+g mode "default"
-#      bindsym $mod+Shift+q kill; mode "default"
-# }
-# bindsym $mod+Shift+q mode "kill?"
+mode "kill?" {
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+     bindsym ctrl+g mode "default"
+     bindsym $mod+Shift+q kill; mode "default"
+}
+bindsym $mod+Shift+q mode "kill?"
 bindsym $alt+F4 kill;
 
 # Alternative alt tab
