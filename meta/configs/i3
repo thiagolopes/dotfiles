@@ -73,6 +73,10 @@ bindcode $mod+40 exec "rofi -drun-use-desktop-cache -theme dmenu -tokenize -drun
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i'
 
+# Print
+# bindsym --release Print exec scrot -s --line color=red
+# bindsym --release $mod+Print exec scrot
+bindsym --release Print exec flameshot gui
 
 # change focus
 bindsym $mod+j focus left
@@ -259,6 +263,7 @@ exec --no-startup-id udiskie
 exec --no-startup-id keynav
 exec --no-startup-id lxpolkit
 exec --no-startup-id lxqt-policykit-agent
+exec --no-startup-id redshift-gtk
 # exec --no-startup-id pasystray
 exec --no-startup-id picom --backend glx
 exec --no-startup-id xiccd
