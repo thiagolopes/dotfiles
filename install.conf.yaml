@@ -71,6 +71,7 @@
     ~/.config/i3/config:                ./meta/configs/i3
     ~/.config/i3/i3status-rs.toml:      ./meta/configs/i3status-rs
     ~/.config/i3status/config:          ./meta/configs/i3status.conf
+    ~/.config/picom.conf:               ./meta/configs/picom
 
     ~/.bin:                             ./meta/bin
     ~/.fonts:                           ./meta/fonts
