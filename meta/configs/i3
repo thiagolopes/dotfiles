@@ -240,13 +240,15 @@ for_window [all] title_window_icon padding 4
 # Floating
 for_window [title="CopyQ"] floating enable, move position mouse, resize set 40x100
 for_window [id="galculator"] floating enable
-for_window [window_type="dialog"] floating enable
-for_window [window_role="dialog"] floating enable
+# for_window [window_type="dialog"] floating enable
+# for_window [window_role="dialog"] floating enable
 for_window [title="Telegram"] floating enable
 for_window [instance="pavucontrol"] floating enable, resize set 900 600
 for_window [title="Spectacle"] floating enable, resize set 900 600
 for_window [class="Nitrogen"] floating enable, resize set 900 600
 for_window [class="Audacious"] floating enable, resize set 900 600
+for_window [class="Gpick"] floating enable, resize set 900 900
+for_window [class="qBittorrent"] floating enable, resize set 900 900
 for_window [title="Picture-in-Picture"] sticky enable
 
 # Startup goodies
