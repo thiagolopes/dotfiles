@@ -73,6 +73,8 @@
     ~/.config/i3status/config:          ./meta/configs/i3status.conf
     ~/.config/picom.conf:               ./meta/configs/picom
 
+    ~/.config/awesome/rc.lua:           ./meta/configs/awesome
+
     ~/.bin/automatic-keyboard.sh:       ./meta/bin/automatic-keyboard.sh
     ~/.bin/backup.sh:                   ./meta/bin/backup.sh
     ~/.bin/i3-alt-tab:                  ./meta/bin/i3-alt-tab
