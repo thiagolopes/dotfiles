@@ -18,10 +18,27 @@ set -gx PATH $HOME/.deno/bin $HOME/.pyenv/bin $HOME/bin /usr/local/bin $HOME/.bi
 
 set -U fish_greeting
 
-function start_sway
+function start-sway
     dbus-run-session sway
 end
 
-function feh_mosaic
+function feh-ls
     feh --montage --thumb-height 200 --thumb-width 200 --index-info "%wx%h" --output .
+end
+
+function monitor-brightness -a perc
+    set BRIGHTNESS (sudo ddcutil capabilities | grep -e ".*(Brightness)")
+    echo $BRIGHTNESS
+    set NUMBER_BRIGHTNESS (echo $BRIGHTNESS | awk '{ print $2 }')
+    echo "Change monitor brightness ($NUMBER_BRIGHTNESS) to $perc"
+    sudo ddcutil setvcp 10 $perc
+end
+
+
+function startx -a wm
+    if test -d $wm
+	set wm "i3"
+    end
+    echo "running $wm ..."
+    WM=$wm xinit
 end
