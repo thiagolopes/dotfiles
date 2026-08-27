@@ -42,3 +42,6 @@ function startx -a wm
     echo "running $wm ..."
     WM=$wm xinit
 end
+
+alias ss_tcp 'ss -ltpu'
+alias clipboard 'xclip -selection clipboard'
