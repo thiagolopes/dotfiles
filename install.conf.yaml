@@ -75,11 +75,10 @@
 
     ~/.config/awesome/rc.lua:           ./meta/configs/awesome
 
-    ~/.bin/automatic-keyboard.sh:       ./meta/bin/automatic-keyboard.sh
     ~/.bin/backup.sh:                   ./meta/bin/backup.sh
     ~/.bin/i3-alt-tab:                  ./meta/bin/i3-alt-tab
-    ~/.bin/natural-scroll:              ./meta/bin/natural-scroll
-    ~/.bin/setup-keyboard:              ./meta/bin/setup-keyboard
+    ~/.bin/mouse-natural-scroll:        ./meta/bin/mouse-natural-scroll
+    ~/.bin/keyboard-meta:               ./meta/bin/keyboard-meta
     ~/.bin/setup-xorg.sh:               ./meta/bin/setup-xorg.sh
     ~/.bin/xdg-create-dirs.sh:          ./meta/bin/xdg-create-dirs.sh
 
