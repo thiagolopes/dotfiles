@@ -215,13 +215,14 @@ bar {
 }
 
 # Confim kill
-mode "kill?" {
-     bindsym Return mode "default"
-     bindsym Escape mode "default"
-     bindsym ctrl+g mode "default"
-     bindsym $mod+Shift+q kill; mode "default"
-}
-bindsym $mod+Shift+q mode "kill?"
+# mode "kill?" {
+#      bindsym Return mode "default"
+#      bindsym Escape mode "default"
+#      bindsym ctrl+g mode "default"
+#      bindsym $mod+Shift+q kill; mode "default"
+# }
+# bindsym $mod+Shift+q mode "kill?"
+bindsym $mod+Shift+q kill;
 bindsym $alt+F4 kill;
 
 # Alternative alt tab
