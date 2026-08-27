@@ -25,6 +25,7 @@ xsetroot -solid "#333333"
 ulimit -c unlimited
 
 xrandr --output HDMI-A-1 --mode 2560x1440 --rate 144 --scale 1 --dpi 96
+[ -f ~/.xprofile ] && . ~/.xprofile
 
 # Start i3 and log to ~/.local/share/i3/log
 mkdir -p ~/.local/share/i3
