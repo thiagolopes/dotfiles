@@ -18,15 +18,11 @@ set -gx PATH $HOME/.deno/bin $HOME/.pyenv/bin $HOME/bin /usr/local/bin $HOME/.bi
 
 set -U fish_greeting
 
-function start-sway
-    dbus-run-session sway
-end
-
 function feh-ls
     feh --montage --thumb-height 200 --thumb-width 200 --index-info "%wx%h" --output .
 end
 
-function monitor-brightness -a perc
+function monitor-brightness -a perc --description "percent (%)"
     set BRIGHTNESS (sudo ddcutil capabilities | grep -e ".*(Brightness)")
     echo $BRIGHTNESS
     set NUMBER_BRIGHTNESS (echo $BRIGHTNESS | awk '{ print $2 }')
@@ -34,13 +30,33 @@ function monitor-brightness -a perc
     sudo ddcutil setvcp 10 $perc
 end
 
+function counter -a times --description "How many times print ."
+    if test -d $times
+	set times 3
+    end
+    for x in (seq $times)
+	printf "."
+	sleep 0.5
+    end
+    printf "\n"
+end
 
-function startx -a wm
+function startx -a wm --description "Which Window Manager X11 to start"
     if test -d $wm
 	set wm "i3"
     end
-    echo "running $wm ..."
+    echo "running $wm"
+    counter
     WM=$wm xinit
+end
+
+function startway -a wm --description "Which Window Manager Wayland to start"
+    if test -d $wm
+	set wm "sway"
+    end
+    echo "running $wm"
+    counter
+    XDG_SESSION_TYPE=wayland dbus-run-session $wm
 end
 
 alias ss_tcp 'ss -ltpu'
