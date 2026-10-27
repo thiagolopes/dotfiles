@@ -66,6 +66,7 @@
     ~/.keynavrc:                        ./meta/configs/keynavrc
     ~/.xinitrc:                         ./meta/configs/xinitrc
     ~/.xmodmap:                         ./meta/configs/xmodmap
+    ~/.config/conky/conky.conf:         ./meta/configs/conky
 
     # i3wm
     ~/.config/i3/config:                ./meta/configs/i3
