@@ -1,12 +1,11 @@
 # border
 linux_display_server x11
 
-font_family family='FiraCode Nerd Font'
-font_size 16.0
+font_family family='IBM Plex Mono'
+font_size 14.0
 
 enable_audio_bell no
 
-
 # BEGIN_KITTY_THEME
-include current-theme.conf
+# include current-theme.conf
 # END_KITTY_THEME

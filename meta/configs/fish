@@ -50,7 +50,7 @@ function startx -a wm --description "Which Window Manager X11 to start"
     WM=$wm xinit
 end
 
-function startway -a wm --description "Which Window Manager Wayland to start"
+function startwayland -a wm --description "Which Window Manager Wayland to start"
     if test -d $wm
 	set wm "sway"
     end
