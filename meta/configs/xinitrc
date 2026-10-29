@@ -15,21 +15,10 @@ xset -b
 # export LC_MESSAGES=C
 # export LC_TIME=en_DK.UTF-8
 
-# Use XToolkit in java applications
-export AWT_TOOLKIT=XToolkit
-
-# Set background color
-xsetroot -solid "#333333"
-
 # Enable core dumps in case something goes wrong
-ulimit -c unlimited
+# ulimit -c unlimited
 
-xrandr --output HDMI-A-1 --mode 2560x1440 --rate 144 --scale 1 --dpi 96
 [ -f ~/.xprofile ] && . ~/.xprofile
-
-# Start i3 and log to ~/.local/share/i3/log
-mkdir -p ~/.local/share/i3
-echo "Starting at $(date)" >> ~/.local/share/i3/log
 
 if [ ! -z "$1" ]; then
    WM=$1
@@ -39,5 +28,6 @@ if [ -z "$WM" ]; then
     echo "Please set var $WM with the executable name"
     exit 1
 else
-    exec dbus-launch --sh-syntax --exit-with-session /usr/bin/$WM
+    # exec dbus-launch --sh-syntax --exit-with-session $WM
+    exec $WM
 fi
