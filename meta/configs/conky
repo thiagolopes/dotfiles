@@ -63,7 +63,11 @@ ${color #98c2c7}RAM:$color $mem/$memmax - $memperc% ${color #4B5563}${membar 4}$
 ${color #4B5563}${memgraph}$color
 ${color #98c2c7}Swap:$color $swap/$swapmax - $swapperc% ${color #4B5563}${swapbar 4}$color
 ${color #98c2c7}CPU:$color $cpu% ${color #4B5563}$cpubar$color
-${color #4B5563}${cpugraph}$color
+${color #4B5563}${cpugraph}
+${cpubar cpu1 10,92} ${cpubar cpu2 10,92} ${cpubar cpu3 10,92} ${cpubar cpu4 10,92}
+${cpubar cpu5 10,92} ${cpubar cpu6 10,92} ${cpubar cpu7 10,92} ${cpubar cpu8 10,92}
+${cpubar cpu9 10,92} ${cpubar cpu10 10,92} ${cpubar cpu11 10,92} ${cpubar cpu12 10,92}
+${cpubar cpu13 10,92} ${cpubar cpu14 10,92} ${cpubar cpu15 10,92} ${cpubar cpu16 10,92}$color
 ${color #98c2c7}Processes:$color $processes  ${color #98c2c7}Running:$color $running_processes ${color #98c2c7}Threads:$color $running_threads
 ${color #98c2c7}File systems:$color ${fs_used /}/${fs_size /} - ${fs_used_perc /}%/${fs_free_perc /}%
 ${color #4B5563}${fs_bar 6 /}$color
