@@ -77,8 +77,8 @@ ${color #98c2c7}Write:$color $diskio_write
 ${color #4B5563}$diskiograph_write$color
 ${if_existing /usr/bin/radeontop}${color #98c2c7}${execi 5 glxinfo -B | grep -oP '(?<=Device: ).*?(?=\()'} Usage: $color${execi 5 radeontop -d- -l1 | grep -o 'gpu [0-9]\{1,3\}' | cut -c 5-}%  ${color #98c2c7}VRAM: $color${execi 5 radeontop -d- -l1 | grep -o 'vram [0-9]\{1,3\}' | cut -c 6-}%
 ${color #4B5563}${execgraph "radeontop -d- -l1 | grep -o 'gpu [0-9]\{1,3\}' | cut -c 5-10"}${endif}
-${color #98c2c7}Networking (enp5s0):
-Up:$color ${upspeed enp5s0} ${color #98c2c7} - Down:$color ${downspeed enp5s0}
+${color #98c2c7}Networking (enp5s0):$color ${addr enp5s0}
+${color #98c2c7}Up:$color ${upspeed enp5s0} ${color #98c2c7} - Down:$color ${downspeed enp5s0}
 ${color #4B5563}$downspeedgraph$color
 ${color #98c2c7}Name              PID     CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
