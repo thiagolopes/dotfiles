@@ -54,32 +54,41 @@ conky.config = {
     xftalpha = true,
 }
 
+sizegraph = 30
+sizebar = 6
+-- Idea:
+-- ctx = conky_gen.new()
+-- enable_ctx(ctx)
+-- color(#fffff)
+-- sysname()
+-- conky.text = render(ctx)
+
 -- Variables: https://conky.cc/variables
 conky.text = [[
 ${color #ffcb48}$sysname - Kernel $kernel $machine${color}
 ${color #98c2c7}Uptime:$color $uptime
 ${color #98c2c7}Frequency:$color $freq (MHz) - $freq_g (GHz)
-${color #98c2c7}RAM:$color $mem/$memmax - $memperc% ${color #4B5563}${membar 4}$color
-${color #4B5563}${memgraph}$color
-${color #98c2c7}Swap:$color $swap/$swapmax - $swapperc% ${color #4B5563}${swapbar 4}$color
-${color #98c2c7}CPU:$color $cpu% ${color #4B5563}$cpubar$color
-${color #4B5563}${cpugraph}
-${cpubar cpu1 10,92} ${cpubar cpu2 10,92} ${cpubar cpu3 10,92} ${cpubar cpu4 10,92}
-${cpubar cpu5 10,92} ${cpubar cpu6 10,92} ${cpubar cpu7 10,92} ${cpubar cpu8 10,92}
-${cpubar cpu9 10,92} ${cpubar cpu10 10,92} ${cpubar cpu11 10,92} ${cpubar cpu12 10,92}
-${cpubar cpu13 10,92} ${cpubar cpu14 10,92} ${cpubar cpu15 10,92} ${cpubar cpu16 10,92}$color
+${color #98c2c7}RAM:$color $mem/$memmax - $memperc% ${color #4B5563}${membar ]] ..sizebar.. [[}$color
+${color #4B5563}${memgraph ]] .. sizegraph .. [[,}$color
+${color #98c2c7}Swap:$color $swap/$swapmax - $swapperc% ${color #4B5563}${swapbar ]] .. sizebar .. [[}$color
+${color #98c2c7}CPU:$color $cpu% ${color #4B5563}${cpubar ]] .. sizebar .. [[}$color
+${color #4B5563}${cpugraph ]] .. sizegraph .. [[,}
+${cpubar cpu1 ]] .. sizebar .. [[,92} ${cpubar cpu2 ]] .. sizebar .. [[,92} ${cpubar cpu3 ]] .. sizebar .. [[,92} ${cpubar cpu4 ]] .. sizebar .. [[,92}
+${cpubar cpu5 ]] .. sizebar .. [[,92} ${cpubar cpu6 ]] .. sizebar .. [[,92} ${cpubar cpu7 ]] .. sizebar .. [[,92} ${cpubar cpu8 ]] .. sizebar .. [[,92}
+${cpubar cpu9 ]] .. sizebar .. [[,92} ${cpubar cpu10 ]] .. sizebar .. [[,92} ${cpubar cpu11 ]] .. sizebar .. [[,92} ${cpubar cpu12 ]] .. sizebar .. [[,92}
+${cpubar cpu13 ]] .. sizebar .. [[,92} ${cpubar cpu14 ]] .. sizebar .. [[,92} ${cpubar cpu15 ]] .. sizebar .. [[,92} ${cpubar cpu16 ]] .. sizebar .. [[,92}$color
 ${color #98c2c7}Processes:$color $processes  ${color #98c2c7}Running:$color $running_processes ${color #98c2c7}Threads:$color $running_threads
 ${color #98c2c7}File systems:$color ${fs_used /}/${fs_size /} - ${fs_used_perc /}%/${fs_free_perc /}%
-${color #4B5563}${fs_bar 6 /}$color
+${color #4B5563}${fs_bar ]] .. sizebar .. [[ /}$color
 ${color #98c2c7}Read:$color $diskio_read
-${color #4B5563}$diskiograph_read$color
+${color #4B5563}${diskiograph_read ]] .. sizegraph .. [[,}$color
 ${color #98c2c7}Write:$color $diskio_write
-${color #4B5563}$diskiograph_write$color
+${color #4B5563}${diskiograph_write ]] .. sizegraph .. [[,}$color
 ${if_existing /usr/bin/radeontop}${color #98c2c7}${execi 5 glxinfo -B | grep -oP '(?<=Device: ).*?(?=\()'} Usage: $color${execi 5 radeontop -d- -l1 | grep -o 'gpu [0-9]\{1,3\}' | cut -c 5-}%  ${color #98c2c7}VRAM: $color${execi 5 radeontop -d- -l1 | grep -o 'vram [0-9]\{1,3\}' | cut -c 6-}%
-${color #4B5563}${execgraph "radeontop -d- -l1 | grep -o 'gpu [0-9]\{1,3\}' | cut -c 5-10"}${endif}
+${color #4B5563}${execgraph "radeontop -d- -l1 | grep -o 'gpu [0-9]\{1,3\}' | cut -c 5-10" ]] .. sizegraph .. [[,}${endif}
 ${color #98c2c7}Networking (enp5s0):$color ${addr enp5s0}
 ${color #98c2c7}Up:$color ${upspeed enp5s0} ${color #98c2c7} - Down:$color ${downspeed enp5s0}
-${color #4B5563}$downspeedgraph$color
+${color #4B5563}${downspeedgraph ]] .. sizegraph .. [[,}$color
 ${color #98c2c7}Name              PID     CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
