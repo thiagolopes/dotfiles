@@ -47,7 +47,7 @@ conky.config = {
     show_graph_range = false,
     show_graph_scale = false,
     stippled_borders = 0,
-    update_interval = 1.0,
+    update_interval = 0.75,
     uppercase = false,
     use_spacer = true,
     use_xft = true,
@@ -56,6 +56,10 @@ conky.config = {
 
 sizegraph = 30
 sizebar = 6
+
+script_helper = "~/.config/conky/helper.sh"
+helper_out = "~/.config/conky/outputs.txt"
+
 -- Idea:
 -- ctx = conky_gen.new()
 -- enable_ctx(ctx)
@@ -68,27 +72,25 @@ conky.text = [[
 ${color #ffcb48}$sysname - Kernel $kernel $machine${color}
 ${color #98c2c7}Uptime:$color $uptime
 ${color #98c2c7}Frequency:$color $freq (MHz) - $freq_g (GHz)
-${color #98c2c7}RAM:$color $mem/$memmax - $memperc% ${color #4B5563}${membar ]] ..sizebar.. [[}$color
-${color #4B5563}${memgraph ]] .. sizegraph .. [[,}$color
-${color #98c2c7}Swap:$color $swap/$swapmax - $swapperc% ${color #4B5563}${swapbar ]] .. sizebar .. [[}$color
 ${color #98c2c7}CPU:$color $cpu% ${color #4B5563}${cpubar ]] .. sizebar .. [[}$color
 ${color #4B5563}${cpugraph ]] .. sizegraph .. [[,}
 ${cpubar cpu1 ]] .. sizebar .. [[,92} ${cpubar cpu2 ]] .. sizebar .. [[,92} ${cpubar cpu3 ]] .. sizebar .. [[,92} ${cpubar cpu4 ]] .. sizebar .. [[,92}
 ${cpubar cpu5 ]] .. sizebar .. [[,92} ${cpubar cpu6 ]] .. sizebar .. [[,92} ${cpubar cpu7 ]] .. sizebar .. [[,92} ${cpubar cpu8 ]] .. sizebar .. [[,92}
 ${cpubar cpu9 ]] .. sizebar .. [[,92} ${cpubar cpu10 ]] .. sizebar .. [[,92} ${cpubar cpu11 ]] .. sizebar .. [[,92} ${cpubar cpu12 ]] .. sizebar .. [[,92}
 ${cpubar cpu13 ]] .. sizebar .. [[,92} ${cpubar cpu14 ]] .. sizebar .. [[,92} ${cpubar cpu15 ]] .. sizebar .. [[,92} ${cpubar cpu16 ]] .. sizebar .. [[,92}$color
-${color #98c2c7}Processes:$color $processes  ${color #98c2c7}Running:$color $running_processes ${color #98c2c7}Threads:$color $running_threads
-${color #98c2c7}File systems:$color ${fs_used /}/${fs_size /} - ${fs_used_perc /}%/${fs_free_perc /}%
+${color #98c2c7}/ (${fs_size /}):$color ${fs_free /}/${fs_used} - ${fs_free_perc}%/${fs_used_perc}%
 ${color #4B5563}${fs_bar ]] .. sizebar .. [[ /}$color
 ${color #98c2c7}Read:$color $diskio_read
 ${color #4B5563}${diskiograph_read ]] .. sizegraph .. [[,}$color
 ${color #98c2c7}Write:$color $diskio_write
 ${color #4B5563}${diskiograph_write ]] .. sizegraph .. [[,}$color
-${if_existing /usr/bin/radeontop}${color #98c2c7}${execi 5 glxinfo -B | grep -oP '(?<=Device: ).*?(?=\()'} Usage: $color${execi 5 radeontop -d- -l1 | grep -o 'gpu [0-9]\{1,3\}' | cut -c 5-}%  ${color #98c2c7}VRAM: $color${execi 5 radeontop -d- -l1 | grep -o 'vram [0-9]\{1,3\}' | cut -c 6-}%
-${color #4B5563}${execgraph "radeontop -d- -l1 | grep -o 'gpu [0-9]\{1,3\}' | cut -c 5-10" ]] .. sizegraph .. [[,}${endif}
+${if_existing /usr/bin/radeontop}${color #98c2c7}${execi 1 cat ]] .. helper_out .. [[ | grep -oP '(?<=Device: ).*?(?=\()'} Usage: $color${execi 1 cat ]] .. helper_out .. [[ | grep -o 'gpu [0-9]\{1,3\}' | cut -c 5-}%  ${color #98c2c7}VRAM: $color${execi 1 cat ]] .. helper_out .. [[ | grep -o 'vram [0-9]\{1,3\}' | cut -c 6-}%
+${color #4B5563}${execigraph 1 "cat ]] .. helper_out .. [[| grep -o 'gpu [0-9]\{1,3\}' | cut -c 5-10" ]] .. sizegraph .. [[,}${endif}
 ${color #98c2c7}Networking (enp5s0):$color ${addr enp5s0}
 ${color #98c2c7}Up:$color ${upspeed enp5s0} ${color #98c2c7} - Down:$color ${downspeed enp5s0}
 ${color #4B5563}${downspeedgraph ]] .. sizegraph .. [[,}$color
+${hr}
+${color #98c2c7}Processes:$color $processes  ${color #98c2c7}Running:$color $running_processes ${color #98c2c7}Threads:$color $running_threads
 ${color #98c2c7}Name              PID     CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
@@ -96,4 +98,9 @@ ${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
 ${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
 ${color lightgrey} ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
 ${color lightgrey} ${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6}
+${hr}
+${color #98c2c7}Swap:$color $swap/$swapmax - $swapperc% ${color #4B5563}${swapbar ]] .. sizebar .. [[}$color
+${color #98c2c7}RAM:$color $mem/$memmax - $memperc% ${color #4B5563}${membar ]] ..sizebar.. [[}$color
+${color #4B5563}${memgraph ]] .. sizegraph .. [[,}$color
+${texeci 10 ]] .. script_helper .. [[}
 ]];

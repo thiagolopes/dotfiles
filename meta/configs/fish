@@ -24,7 +24,6 @@ end
 
 function monitor-brightness -a perc --description "percent (%)"
     set BRIGHTNESS (sudo ddcutil capabilities | grep -e ".*(Brightness)")
-    echo $BRIGHTNESS
     set NUMBER_BRIGHTNESS (echo $BRIGHTNESS | awk '{ print $2 }')
     echo "Change monitor brightness ($NUMBER_BRIGHTNESS) to $perc"
     sudo ddcutil setvcp 10 $perc

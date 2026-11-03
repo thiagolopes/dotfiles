@@ -1,0 +1,17 @@
+#!/bin/bash
+# this script is used to generate data and cache on demand operations for conky instance
+
+CONKY=$HOME/.config/conky
+exec 200>$CONKY/helper.lock
+flock -n 200 || { echo "already running"; exit 1; }
+
+
+OUT="${CONKY}/outputs.txt"
+TMP="${OUT}$.tmp"
+
+date > $TMP
+glxinfo -B >> $TMP
+radeontop -d- -l1 2&>> $TMP
+
+# only rotate data in file when finalize
+cat $TMP > $OUT
