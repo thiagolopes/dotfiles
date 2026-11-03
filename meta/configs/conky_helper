@@ -2,7 +2,8 @@
 # this script is used to generate data and cache on demand operations for conky instance
 
 CONKY=$HOME/.config/conky
-exec 200>$CONKY/helper.lock
+FLOCKER=$CONKY/helper.lock
+exec 200>$FLOCKER
 flock -n 200 || { echo "already running"; exit 1; }
 
 
