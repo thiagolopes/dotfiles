@@ -31,3 +31,5 @@ end
 
 alias ss_tcp 'ss -ltpu'
 alias clipboard 'xclip -selection clipboard'
+
+source $HOME/.config/fish/lscolors.fish
