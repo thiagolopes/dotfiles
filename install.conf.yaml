@@ -87,8 +87,10 @@
     ~/.fonts:                           ./meta/fonts
     ~/.gitconfig:                       ./meta/configs/gitconfig
     ~/.pdbrc:                           ./meta/configs/pdbrc
+    ~/.bashrc:                          ./meta/configs/bashrc
+    ~/.bashenv:                         ./meta/configs/env
     ~/.zshrc:                           ./meta/configs/zshrc
-    ~/.zshenv:                          ./meta/configs/zshenv
+    ~/.zshenv:                          ./meta/configs/env
     ~/.profile.icm:                     ./meta/configs/rtings-icc-profile.icm
     ~/.config/ranger/rc.conf:           ./meta/configs/ranger.rc
     ~/.config/user-dirs.dirs:           ./meta/configs/user-dirs.dirs

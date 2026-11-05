@@ -1,0 +1,9 @@
+# .bashrc
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+PS1='\u@\h \w> '
+
+# source "${HOME}/.bashenv"
+alias ls='ls --color=auto'
